@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Providers — OpenAI-Compatible APIs and Local Models - Nexora</title>
+<meta name="description" content="Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Mohamed Hamra | محمد حمرة">
+<meta name="copyright" content="© 2026 Mohamed Hamra">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/providers/custom.html">
+<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/providers/custom.html">
+<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/providers/custom.html">
+<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexora Docs">
+<meta property="og:title" content="Custom Providers — OpenAI-Compatible APIs and Local Models - Nexora">
+<meta property="og:description" content="Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.">
+<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/providers/custom.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Custom Providers — OpenAI-Compatible APIs and Local Models - Nexora">
+<meta name="twitter:description" content="Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Custom Providers — OpenAI-Compatible APIs and Local Models - Nexora", "description": "Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/providers/custom.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Providers"}, {"@type": "ListItem", "position": 3, "name": "Custom Providers — OpenAI-Compatible APIs and Local Models - Nexora"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
+  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
+  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link active" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link" href="../assistants/overview.html">Overview</a><a class="nav-link" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
+  <main class="main">
+    <div class="eyebrow">Providers</div>
+    <h1 class="page-title">Custom Providers — OpenAI-Compatible APIs and Local Models</h1>
+    <p class="page-desc">Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.</p>
+    <article class="prose"><p>Nexora's OpenAI provider type is not limited to OpenAI itself. Because the OpenAI Chat Completions API has become a universal standard, you can point it at virtually any compatible service — model aggregators such as OpenRouter, a local Ollama instance running entirely on your device or home network, a corporate proxy, or any self-hosted open-source inference server. All you need to do is create an OpenAI provider, swap the base URL, and add the model IDs your endpoint exposes.</p>
+<h2 id="connect-to-a-custom-endpoint">Connect to a custom endpoint</h2>
+<div class="steps"><div class="step"><div class="step-t">Add an OpenAI provider</div><div class="step-b"><p>Go to <strong>Settings → Providers</strong>, tap <strong>Add Provider</strong>, and select <strong>OpenAI</strong>.</p></div></div>
+<div class="step"><div class="step-t">Change the base URL</div><div class="step-b"><p>Replace the default <code>https://api.openai.com/v1</code> with the base URL of your service. See the examples below for common endpoints.</p></div></div>
+<div class="step"><div class="step-t">Enter your API key</div><div class="step-b"><p>Paste the API key your service issued. Some local services (such as Ollama) do not require a key — you can enter any placeholder value such as <code>ollama</code> in that case.</p></div></div>
+<div class="step"><div class="step-t">Add custom headers (if needed)</div><div class="step-b"><p>Some services require extra HTTP headers. Open the <strong>Custom Headers</strong> section and add any required key-value pairs.</p></div></div>
+<div class="step"><div class="step-t">Add models</div><div class="step-b"><p>Tap <strong>Add Model</strong> and enter the model IDs your endpoint supports. For aggregators like OpenRouter, use the full model slug (for example <code>openai/gpt-4o</code> or <code>anthropic/claude-opus-4-5</code>).</p></div></div>
+<div class="step"><div class="step-t">Save</div><div class="step-b"><p>Tap <strong>Save</strong>. Your custom provider is now available in the model picker.</p></div></div></div>
+<h2 id="popular-endpoint-examples">Popular endpoint examples</h2>
+<div class="cards cols-2"><div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></svg></div><div class="card-t">OpenRouter</div><div class="card-b"><p>Route requests to 100+ models from multiple providers through a single API key.</p>
+<p><strong>Base URL:</strong> <code>https://openrouter.ai/api/v1</code></p>
+<p><strong>Required headers:</strong></p>
+<ul>
+<li><code>HTTP-Referer</code>: your app or website URL (identifies your app to OpenRouter)</li>
+<li><code>X-Title</code>: a short display name for your app (optional but recommended)</li>
+</ul></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.500h.01M7 16.500h.01"/></svg></div><div class="card-t">Ollama (local)</div><div class="card-b"><p>Run open-source models entirely on your device or local network — no API key required.</p>
+<p><strong>Base URL:</strong> <code>http://localhost:11434/v1</code></p>
+<p><strong>API Key:</strong> any non-empty string, for example <code>ollama</code></p>
+<p>Start Ollama and pull a model (<code>ollama pull llama3.2</code>) before adding it in Nexora.</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 16v5"/></svg></div><div class="card-t">LM Studio (local)</div><div class="card-b"><p>Serve local GGUF models from your PC to your Android device over your home network.</p>
+<p><strong>Base URL:</strong> <code>http://YOUR_PC_IP:1234/v1</code></p>
+<p><strong>API Key:</strong> <code>lm-studio</code> (or any placeholder)</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h4l10 10h4M3 17h4l3-3M14 10l3-3h4M18 4l3 3-3 3M18 14l3 3-3 3"/></svg></div><div class="card-t">Custom proxy</div><div class="card-b"><p>Route requests through your own server for key management, logging, or rate limiting.</p>
+<p><strong>Base URL:</strong> your proxy URL, for example <code>https://my-proxy.example.com/v1</code></p>
+<p>Add any authentication headers your proxy requires in <strong>Custom Headers</strong>.</p></div></div></div>
+<h2 id="custom-http-headers">Custom HTTP headers</h2>
+<p>Open the <strong>Custom Headers</strong> section inside the provider detail screen to add arbitrary HTTP headers to every request this provider sends. Each entry is a key-value pair.</p>
+<p>Common use cases:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HTTP-Referer</code></td>
+<td><code>https://yoursite.com</code></td>
+<td>Required by OpenRouter to identify your application</td>
+</tr>
+<tr>
+<td><code>X-Title</code></td>
+<td><code>Nexora</code></td>
+<td>Optional display name shown in OpenRouter usage dashboards</td>
+</tr>
+<tr>
+<td><code>X-Custom-Auth</code></td>
+<td><code>Bearer token</code></td>
+<td>Alternative authentication for proxies that don't use <code>Authorization</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>Nexora always adds an <code>Authorization: Bearer &lt;api-key&gt;</code> header automatically. You do not need to add it manually in the custom headers section.</p></div></div>
+<h2 id="custom-request-body-fields">Custom request body fields</h2>
+<p>The <strong>Custom Body</strong> section lets you inject extra JSON fields into every chat request body. This is the right place for provider-specific parameters that Nexora does not expose natively.</p>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Example value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>safe_prompt</code></td>
+<td><code>true</code></td>
+<td>Enable Mistral's safe-mode prompt injection</td>
+</tr>
+<tr>
+<td><code>transforms</code></td>
+<td><code>["middle-out"]</code></td>
+<td>OpenRouter context compression</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>{"order": ["Anthropic"]}</code></td>
+<td>OpenRouter provider routing preference</td>
+</tr>
+</tbody>
+</table>
+<h2 id="balance-checking-for-custom-providers">Balance checking for custom providers</h2>
+<p>Many aggregators and proxies expose a credits or balance endpoint. Enable <strong>Balance Checking</strong> in the provider settings and configure it to match your service.</p>
+<div class="tabs" id="tabs86960960"><div class="tab-bar" role="tablist"><button role="tab" class="tab-btn on" data-i="0">OpenRouter</button><button role="tab" class="tab-btn" data-i="1">DeepSeek</button><button role="tab" class="tab-btn" data-i="2">SiliconFlow</button></div><div class="tab-panel on" role="tabpanel"><ul>
+<li><strong>API Path:</strong> <code>/credits</code></li>
+<li><strong>Result Path:</strong> <code>data.total_credits - data.total_usage</code></li>
+</ul></div><div class="tab-panel" role="tabpanel"><ul>
+<li><strong>API Path:</strong> <code>/user/balance</code></li>
+<li><strong>Result Path:</strong> <code>balance_infos[0].total_balance</code></li>
+</ul></div><div class="tab-panel" role="tabpanel"><ul>
+<li><strong>API Path:</strong> <code>/user/info</code></li>
+<li><strong>Result Path:</strong> <code>data.totalBalance</code></li>
+</ul></div></div>
+<h2 id="share-your-provider-config-via-qr-code">Share your provider config via QR code</h2>
+<p>Once you have a custom provider configured, you can share its settings with other Nexora users without them having to re-enter every field manually.</p>
+<div class="steps"><div class="step"><div class="step-t">Open the provider detail screen</div><div class="step-b"><p>Tap your custom provider in <strong>Settings → Providers</strong>.</p></div></div>
+<div class="step"><div class="step-t">Tap the Share button</div><div class="step-b"><p>Tap the <strong>Share</strong> icon in the top-right corner of the provider detail screen.</p></div></div>
+<div class="step"><div class="step-t">Share the QR code or text string</div><div class="step-b"><p>A bottom sheet appears with a QR code. The recipient can scan it with Nexora to import the provider instantly. You can also tap the share icon in the sheet to send the encoded string through any messaging app.</p></div></div></div>
+<div class="callout warning"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg></div><div class="co-b"><p>The QR code and share string include your API key. Only share them with people you trust, and rotate or revoke the key from your provider's dashboard if it is ever compromised.</p></div></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="cards cols-2"><div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 118 0v3"/></svg></div><div class="card-t">401 Unauthorized</div><div class="card-b"><p>Your API key is missing or incorrect. Double-check the key and make sure there are no leading or trailing spaces.</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .7-1.5 1.2-1.5 2.5M12 17h.01"/></svg></div><div class="card-t">404 Not Found</div><div class="card-b"><p>The base URL or chat completions path is wrong. Confirm the exact URL format in your provider's documentation.</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></svg></div><div class="card-t">Model not found</div><div class="card-b"><p>The model ID you added doesn't match what the endpoint expects. Check the provider's model list and copy the exact slug.</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a15 15 0 0120 0M5 12.500a10 10 0 0114 0M8.500 16a5 5 0 017 0M12 20h.01M3 3l18 18"/></svg></div><div class="card-t">Connection refused (local)</div><div class="card-b"><p>Ollama or LM Studio isn't running, or your Android device can't reach the PC's IP. Make sure both devices are on the same Wi-Fi network and the service is started.</p></div></div></div></article>
+    <div class="pn-row"><a class="pn prev" href="../providers/claude.html"><span>Previous</span>Claude</a><a class="pn next" href="../chat/conversations.html"><span>Next</span>Conversations</a></div>
+    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
+  </main>
+  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#connect-to-a-custom-endpoint">Connect to a custom endpoint</a><a class="toc-2" href="#popular-endpoint-examples">Popular endpoint examples</a><a class="toc-2" href="#custom-http-headers">Custom HTTP headers</a><a class="toc-2" href="#custom-request-body-fields">Custom request body fields</a><a class="toc-2" href="#balance-checking-for-custom-providers">Balance checking for custom providers</a><a class="toc-2" href="#share-your-provider-config-via-qr-code">Share your provider config via QR code</a><a class="toc-2" href="#troubleshooting">Troubleshooting</a></aside>
+</div>
+<script>window.BASE="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

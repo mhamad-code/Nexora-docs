@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistant Memory: Persistent Facts Across Chats - Nexora</title>
+<meta name="description" content="Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Mohamed Hamra | محمد حمرة">
+<meta name="copyright" content="© 2026 Mohamed Hamra">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/assistants/memory.html">
+<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/assistants/memory.html">
+<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/assistants/memory.html">
+<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexora Docs">
+<meta property="og:title" content="Assistant Memory: Persistent Facts Across Chats - Nexora">
+<meta property="og:description" content="Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.">
+<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/assistants/memory.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Assistant Memory: Persistent Facts Across Chats - Nexora">
+<meta name="twitter:description" content="Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Assistant Memory: Persistent Facts Across Chats - Nexora", "description": "Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/assistants/memory.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Assistants"}, {"@type": "ListItem", "position": 3, "name": "Assistant Memory: Persistent Facts Across Chats - Nexora"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
+  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
+  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link" href="../assistants/overview.html">Overview</a><a class="nav-link active" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
+  <main class="main">
+    <div class="eyebrow">Assistants</div>
+    <h1 class="page-title">Assistant Memory: Persistent Facts Across Chats</h1>
+    <p class="page-desc">Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.</p>
+    <article class="prose"><p>Memory lets an assistant remember important facts about you — your preferences, past decisions, or background context — and automatically inject them into future conversations. Instead of re-explaining yourself every time you start a new chat, the assistant already knows what matters.</p>
+<h2 id="how-memory-works">How memory works</h2>
+<p>When memory is enabled, Nexora's configured <strong>fast model</strong> monitors the conversation and extracts facts worth remembering — things like your name, your preferred coding language, or dietary restrictions. Those facts are stored as discrete memory entries. Before each new conversation, the relevant entries are injected into the context, giving the assistant a head start.</p>
+<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>Memory extraction runs through the <strong>fast model</strong> you have configured in <strong>Settings → Models</strong>. Choose a quick, low-cost model for this role to keep extraction fast and inexpensive.</p></div></div>
+<h2 id="enabling-memory">Enabling memory</h2>
+<div class="steps"><div class="step"><div class="step-t">Open the assistant</div><div class="step-b"><p>Go to <strong>Settings → Assistants</strong> and tap the assistant you want to configure.</p></div></div>
+<div class="step"><div class="step-t">Open the Memory tab</div><div class="step-b"><p>Inside the assistant detail screen, tap the <strong>Memory</strong> tab.</p></div></div>
+<div class="step"><div class="step-t">Toggle Memory on</div><div class="step-b"><p>Enable the <strong>Memory</strong> switch. The assistant will begin extracting and storing facts from new conversations.</p></div></div></div>
+<h2 id="memory-settings">Memory settings</h2>
+<div class="param"><div class="p-head"><code class="p-name">enableMemory</code><span class="p-type">boolean</span><span class="p-def">default: <code>false</code></span></div><div class="p-body"><p>Master switch for memory. When off, no facts are extracted and no memories are injected into conversations.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">useGlobalMemory</code><span class="p-type">boolean</span><span class="p-def">default: <code>false</code></span></div><div class="p-body"><p>When enabled, this assistant reads from and writes to the shared global memory pool rather than its own private store. Only available when <strong>Memory</strong> is turned on.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">enableRecentChatsReference</code><span class="p-type">boolean</span><span class="p-def">default: <code>false</code></span></div><div class="p-body"><p>When enabled, the assistant can reference a summary of your recent past conversations, giving it broader continuity beyond individual memory entries.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">enableTimeReminder</code><span class="p-type">boolean</span><span class="p-def">default: <code>false</code></span></div><div class="p-body"><p>Injects a time-interval reminder into the context so the assistant is aware of how much time has passed since your last interaction.</p></div></div>
+<h2 id="global-vs-assistant-isolated-memory">Global vs. assistant-isolated memory</h2>
+<p>By default each assistant maintains its own private memory store, so facts learned by one persona do not leak into another.</p>
+<div class="callout tip"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg></div><div class="co-b"><p>Enable <strong>Use Global Memory</strong> if you want facts to be shared across all your assistants. This is useful when you have several assistants that all need to know the same things about you — your name, time zone, or ongoing projects — without duplicating entries.</p></div></div>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use Global Memory</strong> off</td>
+<td>Facts are stored privately and are only visible to this assistant</td>
+</tr>
+<tr>
+<td><strong>Use Global Memory</strong> on</td>
+<td>Facts are stored in a shared pool visible to all assistants that also have global memory enabled</td>
+</tr>
+</tbody>
+</table>
+<h2 id="viewing-and-editing-memories">Viewing and editing memories</h2>
+<p>You can inspect, add, edit, or delete individual memory entries at any time.</p>
+<div class="steps"><div class="step"><div class="step-t">Open the Memory tab</div><div class="step-b"><p>Navigate to <strong>Settings → Assistants</strong>, tap the assistant, and select the <strong>Memory</strong> tab.</p></div></div>
+<div class="step"><div class="step-t">Browse entries</div><div class="step-b"><p>Scroll through the list of stored memory entries. Each entry shows its content.</p></div></div>
+<div class="step"><div class="step-t">Edit an entry</div><div class="step-b"><p>Tap the pencil icon on any entry to open an edit dialog. Modify the text and tap <strong>Save</strong>.</p></div></div>
+<div class="step"><div class="step-t">Delete an entry</div><div class="step-b"><p>Tap the trash icon on any entry. Confirm the deletion in the dialog that appears.</p></div></div>
+<div class="step"><div class="step-t">Add an entry manually</div><div class="step-b"><p>Tap the <strong>+</strong> button at the top-right of the memory list to write a new fact directly, without waiting for the model to extract it.</p></div></div></div>
+<div class="callout warning"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg></div><div class="co-b"><p>Deleting a memory entry is permanent. The assistant will have no recollection of that fact in future conversations unless you re-add it manually or the model extracts it again.</p></div></div>
+<h2 id="recent-chats-reference">Recent chats reference</h2>
+<p>When <strong>Enable Recent Chats Reference</strong> is turned on, the assistant gains access to a summarised view of your recent conversation history. This is distinct from individual memory entries — it provides a broader narrative of what you have been discussing lately rather than a list of discrete facts.</p>
+<p>Use this feature when you want the assistant to pick up naturally from previous sessions even if no specific facts were extracted into memory.</p></article>
+    <div class="pn-row"><a class="pn prev" href="../assistants/overview.html"><span>Previous</span>Overview</a><a class="pn next" href="../assistants/prompt-injection.html"><span>Next</span>Prompt Injection</a></div>
+    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
+  </main>
+  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#how-memory-works">How memory works</a><a class="toc-2" href="#enabling-memory">Enabling memory</a><a class="toc-2" href="#memory-settings">Memory settings</a><a class="toc-2" href="#global-vs-assistant-isolated-memory">Global vs. assistant-isolated memory</a><a class="toc-2" href="#viewing-and-editing-memories">Viewing and editing memories</a><a class="toc-2" href="#recent-chats-reference">Recent chats reference</a></aside>
+</div>
+<script>window.BASE="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

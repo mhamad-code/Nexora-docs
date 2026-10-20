@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Set Up MCP Servers in Nexora for External Tool Access - Nexora</title>
+<meta name="description" content="Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Mohamed Hamra | محمد حمرة">
+<meta name="copyright" content="© 2026 Mohamed Hamra">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html">
+<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html">
+<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html">
+<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexora Docs">
+<meta property="og:title" content="Set Up MCP Servers in Nexora for External Tool Access - Nexora">
+<meta property="og:description" content="Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.">
+<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Set Up MCP Servers in Nexora for External Tool Access - Nexora">
+<meta name="twitter:description" content="Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Set Up MCP Servers in Nexora for External Tool Access - Nexora", "description": "Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Extensions"}, {"@type": "ListItem", "position": 3, "name": "Set Up MCP Servers in Nexora for External Tool Access - Nexora"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
+  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
+  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link" href="../assistants/overview.html">Overview</a><a class="nav-link" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link active" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
+  <main class="main">
+    <div class="eyebrow">Extensions</div>
+    <h1 class="page-title">Set Up MCP Servers in Nexora for External Tool Access</h1>
+    <p class="page-desc">Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.</p>
+    <article class="prose"><p>Model Context Protocol (MCP) is an open standard that lets AI models securely access external tools, APIs, and data sources. Nexora implements MCP as a first-class feature, so you can wire up any compliant MCP server and immediately expose its tools to your assistants — from web search and code execution to database queries and custom business logic.</p>
+<h2 id="adding-an-mcp-server">Adding an MCP Server</h2>
+<div class="steps"><div class="step"><div class="step-t">Open MCP Settings</div><div class="step-b"><p>Navigate to <strong>Settings → MCP</strong>. You'll see a list of all configured servers along with their current connection status (Idle, Connecting, Connected, Reconnecting, or Error).</p></div></div>
+<div class="step"><div class="step-t">Tap Add Server</div><div class="step-b"><p>Tap the <strong>+</strong> button in the top-right corner. Choose the transport type that matches your server.</p></div></div>
+<div class="step"><div class="step-t">Configure the server</div><div class="step-b"><p>Fill in the server details (see <a href="#transport-types">Transport Types</a> and <a href="#server-options">Server Options</a> below), then save.</p></div></div>
+<div class="step"><div class="step-t">Wait for connection</div><div class="step-b"><p>Nexora connects automatically and syncs the list of tools the server exposes. A green <strong>Connected</strong> indicator confirms the handshake succeeded. If the connection drops, Nexora retries automatically with exponential back-off before marking the server as errored.</p></div></div></div>
+<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>MCP servers must be publicly reachable on the internet or on the same local network as your Android device. Servers behind a firewall or corporate VPN require a VPN connection on the device before Nexora can reach them.</p></div></div>
+<h2 id="transport-types">Transport Types</h2>
+<p>Nexora supports two MCP transport mechanisms. Both require only a URL endpoint — choose whichever your server advertises.</p>
+<div class="cards cols-2"><div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12h.01M8.500 8.500a5 5 0 000 7M15.500 8.500a5 5 0 010 7M5 5a10 10 0 000 14M19 5a10 10 0 010 14"/></svg></div><div class="card-t">SSE (Server-Sent Events)</div><div class="card-b"><p>The original MCP transport. The client opens a persistent HTTP connection and the server pushes events over it. Provide the full SSE endpoint URL, for example <code>https://mcp.example.com/sse</code>.</p></div></div>
+<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v18M4 7l4-4 4 4M16 21V3M12 17l4 4 4-4"/></svg></div><div class="card-t">Streamable HTTP</div><div class="card-b"><p>The newer, recommended transport defined in the MCP spec. Uses standard HTTP requests with chunked streaming. Provide the base URL of the server, for example <code>https://mcp.example.com/mcp</code>.</p></div></div></div>
+<h2 id="server-options">Server Options</h2>
+<p>Each server has a set of common options you configure when adding or editing it.</p>
+<div class="param"><div class="p-head"><code class="p-name">name</code><span class="p-type">string</span><span class="p-req">required</span></div><div class="p-body"><p>A human-readable display name for this server. Appears in the MCP server list and in the assistant settings picker.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">enable</code><span class="p-type">boolean</span><span class="p-def">default: <code>true</code></span></div><div class="p-body"><p>Toggle this server on or off without deleting it. When disabled, Nexora closes the connection and does not expose the server's tools to any assistant.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">url</code><span class="p-type">string</span><span class="p-req">required</span></div><div class="p-body"><p>The full URL of the MCP endpoint. For SSE servers this is typically a path ending in <code>/sse</code>; for Streamable HTTP servers it is the base MCP path.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">headers</code><span class="p-type">list of key-value pairs</span></div><div class="p-body"><p>Custom HTTP headers sent with every request to this server. Use this to pass authentication tokens, API keys, or any other request metadata your server requires. Add each header as a name-value pair, for example <code>Authorization: Bearer &lt;token&gt;</code>.</p></div></div>
+<h2 id="per-tool-options">Per-Tool Options</h2>
+<p>After Nexora connects and syncs, it lists every tool the server exposes. You can control each tool individually.</p>
+<div class="param"><div class="p-head"><code class="p-name">enable</code><span class="p-type">boolean</span><span class="p-def">default: <code>true</code></span></div><div class="p-body"><p>Enable or disable a specific tool from this server. Disabled tools are hidden from the assistant's tool list and are never called, even if the server is connected.</p></div></div>
+<div class="param"><div class="p-head"><code class="p-name">needsApproval</code><span class="p-type">boolean</span><span class="p-def">default: <code>false</code></span></div><div class="p-body"><p>When turned on, Nexora shows a confirmation dialog before executing this tool. Use this for any tool that performs irreversible actions — file writes, emails, purchases — so you stay in control of what the AI actually does.</p></div></div>
+<div class="callout tip"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg></div><div class="co-b"><p>Enable <strong>Needs Approval</strong> on any tool that modifies data or triggers external side-effects. You can always approve quickly, and it prevents the model from acting autonomously in ways you didn't intend.</p></div></div>
+<h2 id="attaching-mcp-servers-to-an-assistant">Attaching MCP Servers to an Assistant</h2>
+<p>Adding a server to Nexora's global list does not automatically expose it to your assistants. You must opt each assistant in explicitly.</p>
+<div class="steps"><div class="step"><div class="step-t">Open assistant settings</div><div class="step-b"><p>Long-press an assistant on the home screen, or tap the assistant name and then the <strong>Edit</strong> (pencil) icon to open its settings.</p></div></div>
+<div class="step"><div class="step-t">Find the MCP Servers section</div><div class="step-b"><p>Scroll down to <strong>MCP Servers</strong>. You'll see all servers that are currently enabled in your global MCP list.</p></div></div>
+<div class="step"><div class="step-t">Toggle the servers you want</div><div class="step-b"><p>Enable the servers whose tools this assistant should have access to. Only tools from servers ticked here will appear in the assistant's tool calls.</p></div></div></div>
+<h2 id="importing-server-configs-via-json">Importing Server Configs via JSON</h2>
+<p>If a service publishes a ready-made MCP config file, you can import it directly instead of typing in all the details manually.</p>
+<div class="steps"><div class="step"><div class="step-t">Copy or download the JSON config</div><div class="step-b"><p>The config should be a JSON object describing one or more MCP servers in Nexora's config schema.</p></div></div>
+<div class="step"><div class="step-t">Open MCP Settings and tap Import</div><div class="step-b"><p>In <strong>Settings → MCP</strong>, tap the import icon and paste or load the JSON. Nexora validates and merges the servers into your existing list.</p></div></div></div>
+<p>A minimal single-server SSE config looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;commonOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My MCP Server&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;Authorization&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bearer my-secret-token&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.example.com/sse&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="connection-status-reference">Connection Status Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Idle</strong></td>
+<td>Server is disabled or has not yet been started.</td>
+</tr>
+<tr>
+<td><strong>Connecting</strong></td>
+<td>Nexora is establishing the initial connection.</td>
+</tr>
+<tr>
+<td><strong>Connected</strong></td>
+<td>Handshake complete; tools are available.</td>
+</tr>
+<tr>
+<td><strong>Reconnecting</strong></td>
+<td>Connection was lost; Nexora is retrying with exponential back-off.</td>
+</tr>
+<tr>
+<td><strong>Error</strong></td>
+<td>All retry attempts failed. Check the URL, headers, and server availability.</td>
+</tr>
+</tbody>
+</table></article>
+    <div class="pn-row"><a class="pn prev" href="../assistants/prompt-injection.html"><span>Previous</span>Prompt Injection</a><a class="pn next" href="../extensions/skills.html"><span>Next</span>Skills</a></div>
+    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
+  </main>
+  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#adding-an-mcp-server">Adding an MCP Server</a><a class="toc-2" href="#transport-types">Transport Types</a><a class="toc-2" href="#server-options">Server Options</a><a class="toc-2" href="#per-tool-options">Per-Tool Options</a><a class="toc-2" href="#attaching-mcp-servers-to-an-assistant">Attaching MCP Servers to an Assistant</a><a class="toc-2" href="#importing-server-configs-via-json">Importing Server Configs via JSON</a><a class="toc-2" href="#connection-status-reference">Connection Status Reference</a></aside>
+</div>
+<script>window.BASE="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

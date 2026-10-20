@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Search: Ground AI Answers in Live Search Results - Nexora</title>
+<meta name="description" content="Enable Nexora&#x27;s built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Mohamed Hamra | محمد حمرة">
+<meta name="copyright" content="© 2026 Mohamed Hamra">
+<meta name="theme-color" content="#4f46e5">
+<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/chat/search.html">
+<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/chat/search.html">
+<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/chat/search.html">
+<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexora Docs">
+<meta property="og:title" content="Web Search: Ground AI Answers in Live Search Results - Nexora">
+<meta property="og:description" content="Enable Nexora&#x27;s built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.">
+<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/chat/search.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Search: Ground AI Answers in Live Search Results - Nexora">
+<meta name="twitter:description" content="Enable Nexora&#x27;s built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Web Search: Ground AI Answers in Live Search Results - Nexora", "description": "Enable Nexora's built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/chat/search.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Chat"}, {"@type": "ListItem", "position": 3, "name": "Web Search: Ground AI Answers in Live Search Results - Nexora"}]}]}</script>
+</head>
+<body>
+<header class="top">
+  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
+  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
+  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link active" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link" href="../assistants/overview.html">Overview</a><a class="nav-link" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
+  <main class="main">
+    <div class="eyebrow">Chat</div>
+    <h1 class="page-title">Web Search: Ground AI Answers in Live Search Results</h1>
+    <p class="page-desc">Enable Nexora&#x27;s built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.</p>
+    <article class="prose"><p>Nexora includes a built-in web search capability that lets any AI model access live information from the web. When you enable web search before sending a message, Nexora automatically calls your configured search service, retrieves relevant results, and injects them into the conversation context before the model generates its reply.</p>
+<h2 id="enabling-web-search-for-a-message">Enabling Web Search for a Message</h2>
+<p>The web search toggle lives in the <strong>input toolbar</strong> — the row of icons just above the text field.</p>
+<div class="steps"><div class="step"><div class="step-t">Tap the search toggle</div><div class="step-b"><p>Tap the globe or search icon in the toolbar to enable web search. The icon highlights to indicate it is active.</p></div></div>
+<div class="step"><div class="step-t">Type your message</div><div class="step-b"><p>Write your question or prompt as normal. You do not need to phrase it differently — Nexora extracts the search query automatically.</p></div></div>
+<div class="step"><div class="step-t">Send the message</div><div class="step-b"><p>Tap send. Nexora calls the search service, retrieves results, and injects them as context before asking the model to respond. You will see a brief processing indicator while the search is in progress.</p></div></div>
+<div class="step"><div class="step-t">Review the cited sources</div><div class="step-b"><p>The assistant's reply includes references to the search results. Tap any linked URL to open it in your browser.</p></div></div></div>
+<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>Web search is powered by a <strong>tool call</strong> injected into the conversation. The model decides when to invoke the <code>search_web</code> tool based on your prompt. If the model determines that search is unnecessary for a given question, it may skip the web call and answer from its training data.</p></div></div>
+<h2 id="supported-search-services">Supported Search Services</h2>
+<p>Nexora supports a wide range of search providers. Configure one or more and select which one to use as the active service.</p>
+<div class="tabs" id="tabs84829408"><div class="tab-bar" role="tablist"><button role="tab" class="tab-btn on" data-i="0">General purpose</button><button role="tab" class="tab-btn" data-i="1">AI-powered</button><button role="tab" class="tab-btn" data-i="2">Scraping &amp; crawling</button><button role="tab" class="tab-btn" data-i="3">Specialised</button></div><div class="tab-panel on" role="tabpanel"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bing</strong></td>
+<td>Uses the Microsoft Bing Search API. No additional configuration required beyond an API key.</td>
+</tr>
+<tr>
+<td><strong>Brave</strong></td>
+<td>Privacy-focused search via the Brave Search API.</td>
+</tr>
+<tr>
+<td><strong>SearXNG</strong></td>
+<td>Self-hosted meta-search engine. Provide your instance URL, optional credentials, and preferred search engines.</td>
+</tr>
+<tr>
+<td><strong>Bocha</strong></td>
+<td>Chinese-language search service with optional AI-generated summaries.</td>
+</tr>
+<tr>
+<td><strong>Metaso</strong></td>
+<td>Chinese AI-powered search service.</td>
+</tr>
+</tbody>
+</table></div><div class="tab-panel" role="tabpanel"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tavily</strong></td>
+<td>AI search API optimised for LLM use. Supports <code>general</code>, <code>news</code>, and <code>finance</code> topic modes, plus standard/advanced depth.</td>
+</tr>
+<tr>
+<td><strong>Exa</strong></td>
+<td>Semantic search API built for AI applications.</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>Uses Perplexity's search-augmented models. Optional max-tokens settings for replies and per-page content.</td>
+</tr>
+<tr>
+<td><strong>LinkUp</strong></td>
+<td>Configurable search depth (standard / deep).</td>
+</tr>
+<tr>
+<td><strong>Grok</strong></td>
+<td>xAI's Grok model with live web search. Supports custom API URL, model choice, and a configurable system prompt.</td>
+</tr>
+<tr>
+<td><strong>Tinyfish</strong></td>
+<td>Lightweight AI search service.</td>
+</tr>
+</tbody>
+</table></div><div class="tab-panel" role="tabpanel"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Firecrawl</strong></td>
+<td>Web crawling API that returns structured Markdown from any URL.</td>
+</tr>
+<tr>
+<td><strong>Jina</strong></td>
+<td>Reader API (<code>r.jina.ai</code>) for scraping and search API (<code>s.jina.ai</code>) for querying. Both URLs are configurable.</td>
+</tr>
+<tr>
+<td><strong>Ollama</strong></td>
+<td>Run a local search-capable Ollama model as a search backend.</td>
+</tr>
+</tbody>
+</table></div><div class="tab-panel" role="tabpanel"><table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zhipu</strong></td>
+<td>Zhipu AI's search tool.</td>
+</tr>
+<tr>
+<td><strong>Custom JS</strong></td>
+<td>Write your own search (and optionally scrape) logic in JavaScript. Nexora executes the script with a sandboxed <code>fetch()</code> helper.</td>
+</tr>
+</tbody>
+</table></div></div>
+<h2 id="configuring-a-search-service">Configuring a Search Service</h2>
+<div class="steps"><div class="step"><div class="step-t">Open Settings</div><div class="step-b"><p>Tap the <strong>Settings</strong> gear icon in the history drawer (bottom-right of the drawer action row).</p></div></div>
+<div class="step"><div class="step-t">Navigate to Search</div><div class="step-b"><p>Select <strong>Search</strong> from the settings list.</p></div></div>
+<div class="step"><div class="step-t">Add a service</div><div class="step-b"><p>Tap <strong>Add</strong> and choose a service from the list. Each service shows a description and a link to obtain an API key where required.</p></div></div>
+<div class="step"><div class="step-t">Enter credentials</div><div class="step-b"><p>Fill in the API key and any service-specific options (depth, language, model, custom URL, etc.).</p></div></div>
+<div class="step"><div class="step-t">Set as active</div><div class="step-b"><p>If you have multiple services configured, tap the one you want to use to select it as the active search service. The active service is shown in the search toggle tooltip in the chat input toolbar.</p></div></div></div>
+<h3 id="common-configuration-options">Common Configuration Options</h3>
+<p>Different services expose different settings, but you will commonly see:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API Key</strong></td>
+<td>Your authentication key from the provider. Some services (e.g., Bing, SearXNG) may work without one or use a different auth method.</td>
+</tr>
+<tr>
+<td><strong>Result count</strong></td>
+<td>How many search results to fetch and inject into context. More results give the model more information but consume more tokens.</td>
+</tr>
+<tr>
+<td><strong>Depth</strong></td>
+<td>For services like Tavily and LinkUp, controls whether to perform a shallow or deep crawl of results.</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>Restricts results to a specific language. Useful for SearXNG and some other services.</td>
+</tr>
+<tr>
+<td><strong>Include / exclude domains</strong></td>
+<td>Available on select services to whitelist or blacklist specific websites.</td>
+</tr>
+<tr>
+<td><strong>Safe search</strong></td>
+<td>Enables content filtering where supported.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-search-results-are-injected">How Search Results Are Injected</h2>
+<p>When you send a message with web search enabled, Nexora follows this flow:</p>
+<ol>
+<li>The <code>search_web</code> tool is registered with the model alongside your message.</li>
+<li>If the model decides to search, it emits a tool call with a <code>query</code> parameter.</li>
+<li>Nexora calls the active search service with that query and the configured result count.</li>
+<li>The results — including titles, URLs, and text snippets — are returned to the model as tool output.</li>
+<li>Some services also support a <code>scrape_web</code> tool call that lets the model fetch the full content of individual pages.</li>
+<li>The model integrates the results into its final response.</li>
+</ol>
+<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>The search step happens silently in the background. A processing status message appears briefly in the chat list while Nexora is fetching results. The tool call and its output are visible in the chain-of-thought section if your model exposes reasoning steps.</p></div></div>
+<h2 id="the-dedicated-search-page">The Dedicated Search Page</h2>
+<p>In addition to per-message web search, Nexora has a full-screen <strong>Search</strong> page for research-oriented sessions.</p>
+<p>Open the history drawer and tap the <strong>Search</strong> icon (magnifying glass) in the drawer actions row. The Search page provides:</p>
+<ul>
+<li>A persistent search bar that lets you type a query and retrieve web results directly.</li>
+<li>Result cards showing the title, a text snippet, and the source URL.</li>
+<li>Tap any result card to open that URL or use it as context in a new chat.</li>
+</ul>
+<div class="callout tip"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg></div><div class="co-b"><p>Use the Search page when you want to browse and compare multiple results before handing them off to the AI. It gives you more control than the automatic in-conversation search mode.</p></div></div>
+<h2 id="custom-js-search-service">Custom JS Search Service</h2>
+<p>If none of the built-in services fit your needs, use the <strong>Custom JS</strong> option to write your own search logic.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Implement search(query, resultSize) function</span>
+<span class="c1">// Use fetch(url, options?) for HTTP requests</span>
+<span class="c1">// fetch() returns { status, ok, text(), json() }</span>
+<span class="c1">// Return { items: [{ title, url, text }], answer?: string }</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">search</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span><span class="w"> </span><span class="nx">resultSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://example.com/search?q=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&amp;limit=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">resultSize</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">snippet</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>You can also provide an optional <code>scrape(urls)</code> function to implement custom page extraction. Nexora's sandboxed environment provides a synchronous <code>fetch()</code> helper — no <code>async</code>/<code>await</code> is needed.</p>
+<div class="callout warning"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg></div><div class="co-b"><p>Custom JS scripts run inside a restricted sandbox. Network access via <code>fetch()</code> is available, but the script cannot access device storage, Android APIs, or any Nexora internals.</p></div></div></article>
+    <div class="pn-row"><a class="pn prev" href="../chat/branching.html"><span>Previous</span>Branching</a><a class="pn next" href="../assistants/overview.html"><span>Next</span>Overview</a></div>
+    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
+  </main>
+  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#enabling-web-search-for-a-message">Enabling Web Search for a Message</a><a class="toc-2" href="#supported-search-services">Supported Search Services</a><a class="toc-2" href="#configuring-a-search-service">Configuring a Search Service</a><a class="toc-3" href="#common-configuration-options">Common Configuration Options</a><a class="toc-2" href="#how-search-results-are-injected">How Search Results Are Injected</a><a class="toc-2" href="#the-dedicated-search-page">The Dedicated Search Page</a><a class="toc-2" href="#custom-js-search-service">Custom JS Search Service</a></aside>
+</div>
+<script>window.BASE="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

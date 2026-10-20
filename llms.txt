@@ -1,0 +1,37 @@
+# Nexora Docs
+
+> Official documentation for Nexora, a native Android (Kotlin + Jetpack Compose) AI chat app that unifies OpenAI, Google Gemini, Anthropic Claude and any OpenAI-compatible provider. Bring your own API keys; no subscriptions. Documentation available in English and Arabic (العربية, RTL).
+
+Developer: Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code
+Full text: https://mhamad-code.github.io/Nexora-docs/llms-full.txt
+
+## English
+
+- [Install Nexora on Android](https://mhamad-code.github.io/Nexora-docs/download.html): Download the Nexora APK from GitHub Releases, pick the build that matches your device, and complete the first-launch setup.
+- [Quickstart: Send Your First AI Message in 5 Minutes](https://mhamad-code.github.io/Nexora-docs/quickstart.html): Install Nexora on Android, connect your first AI provider with your API key, choose a model, and send your first message in under five minutes.
+- [AI Providers — Connect to Your Preferred AI Services](https://mhamad-code.github.io/Nexora-docs/providers/overview.html): Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.
+- [OpenAI Provider — GPT, o-series, and Compatible APIs](https://mhamad-code.github.io/Nexora-docs/providers/openai.html): Set up an OpenAI provider in Nexora to use GPT-4o, o-series reasoning models, or any OpenAI-compatible endpoint with full API key and URL control.
+- [Google Gemini Provider — Set Up Gemini and Vertex AI](https://mhamad-code.github.io/Nexora-docs/providers/google.html): Connect Nexora to Google's Gemini models using the Gemini API or Vertex AI with a service account for enterprise and private cloud deployments.
+- [Anthropic Claude Provider — All Claude Model Tiers](https://mhamad-code.github.io/Nexora-docs/providers/claude.html): Configure Anthropic Claude in Nexora to access Claude models, with optional prompt caching to reduce latency and costs on long conversations.
+- [Custom Providers — OpenAI-Compatible APIs and Local Models](https://mhamad-code.github.io/Nexora-docs/providers/custom.html): Connect Nexora to any OpenAI-compatible API endpoint, including OpenRouter, local Ollama, self-hosted proxies, and other third-party services.
+- [Managing Conversations in the Nexora Chat Interface](https://mhamad-code.github.io/Nexora-docs/chat/conversations.html): Start chats, switch models, edit and regenerate messages, render rich Markdown, favorite content, share, and track token usage in Nexora.
+- [Multimodal Input: Attach Images and Documents to Chats](https://mhamad-code.github.io/Nexora-docs/chat/multimodal.html): Attach images, PDFs, DOCX files, and more to your Nexora messages. Learn how OCR and document extraction work for non-vision models.
+- [Conversation Branching: Explore Alternate Chat Paths](https://mhamad-code.github.io/Nexora-docs/chat/branching.html): Fork any conversation at a specific message to explore different answers, compare models, or A/B test prompts — all without losing prior context.
+- [Web Search: Ground AI Answers in Live Search Results](https://mhamad-code.github.io/Nexora-docs/chat/search.html): Enable Nexora's built-in web search to inject real-time results into any conversation, configure your preferred search service, and use the Search page.
+- [Assistants: Personas, Models, and Settings](https://mhamad-code.github.io/Nexora-docs/assistants/overview.html): Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.
+- [Assistant Memory: Persistent Facts Across Chats](https://mhamad-code.github.io/Nexora-docs/assistants/memory.html): Enable AI memory so Nexora remembers key facts about you across conversations, and learn how to view, edit, and scope those memories.
+- [Prompt Injections and Lorebooks Explained](https://mhamad-code.github.io/Nexora-docs/assistants/prompt-injection.html): Automatically insert context snippets into conversations using mode injections and lorebooks, with full control over position, priority, and triggers.
+- [Set Up MCP Servers in Nexora for External Tool Access](https://mhamad-code.github.io/Nexora-docs/extensions/mcp.html): Add and configure MCP servers in Nexora to give your AI assistants access to external tools, APIs, and real-world data sources on Android.
+- [Skills: Reusable Capability Bundles for Assistants](https://mhamad-code.github.io/Nexora-docs/extensions/skills.html): Bundle prompt instructions into reusable skills you can install once and enable on any Nexora assistant, then share or import via GitHub.
+- [Workspace](https://mhamad-code.github.io/Nexora-docs/extensions/workspace.html): A lightweight Linux environment for AI to handle agent tasks like file editing and creating presentations.
+- [Set Up TTS and ASR Speech Providers in Nexora for Android](https://mhamad-code.github.io/Nexora-docs/extensions/speech.html): Configure TTS and ASR providers in Nexora to have AI responses read aloud and dictate your messages with a microphone instead of typing.
+- [Generate Images from Text Prompts in Nexora for Android](https://mhamad-code.github.io/Nexora-docs/extensions/image-generation.html): Open Nexora's image generation workspace to create images from text prompts using any image-capable model from your configured providers.
+- [Nexora Appearance: Themes, Dark Mode, and Display Settings](https://mhamad-code.github.io/Nexora-docs/settings/appearance.html): Control how Nexora looks: enable Material You dynamic color, switch dark or AMOLED mode, pick a preset theme, build a custom palette, and tune display.
+- [Access Nexora's Chat Interface from Any Browser on Your LAN](https://mhamad-code.github.io/Nexora-docs/settings/web-access.html): Run a local HTTP server inside Nexora so you can use the full chat interface from any desktop or mobile browser on the same Wi-Fi network.
+- [Back Up and Restore Your Nexora Conversations and Settings](https://mhamad-code.github.io/Nexora-docs/settings/backup.html): Export conversations and settings to a local file, sync automatically to WebDAV or S3-compatible storage, and set reminders so you never lose your data.
+
+## العربية (Arabic)
+
+- [مرحبًا بك في Nexora — تطبيق دردشة بالذكاء الاصطناعي لأندرويد](https://mhamad-code.github.io/Nexora-docs/ar/introduction.html): Nexora تطبيق أندرويد أصلي يجمع OpenAI وGoogle Gemini وAnthropic Claude وأي مزوّد متوافق مع OpenAI في واجهة واحدة أنيقة.
+- [تثبيت Nexora على أندرويد](https://mhamad-code.github.io/Nexora-docs/ar/download.html): نزّل ملف Nexora APK من إصدارات GitHub، واختر النسخة المناسبة لجهازك، وأكمل إعداد أول تشغيل.
+- [البدء السريع: أرسل أول رسالة للذكاء الاصطناعي في 5 دقائق](https://mhamad-code.github.io/Nexora-docs/ar/quickstart.html): ثبّت Nexora على أندرويد، واربط أول مزوّد ذكاء اصطناعي بمفتاح API الخاص بك، واختر نموذجًا، وأرسل أول رسالة في أقل من خمس دقائق.
