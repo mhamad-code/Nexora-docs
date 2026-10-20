@@ -1,76 +1,286 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Providers — Connect to Your Preferred AI Services - Nexora</title>
-<meta name="description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
-<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
-<link rel="stylesheet" href="../assets/style.css">
-<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="author" content="Mohamed Hamra | محمد حمرة">
-<meta name="copyright" content="© 2026 Mohamed Hamra">
-<meta name="theme-color" content="#4f46e5">
-<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
-<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
-<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
-<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
-<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Nexora Docs">
-<meta property="og:title" content="AI Providers — Connect to Your Preferred AI Services - Nexora">
-<meta property="og:description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
-<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ar_AR">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AI Providers — Connect to Your Preferred AI Services - Nexora">
-<meta name="twitter:description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "AI Providers — Connect to Your Preferred AI Services - Nexora", "description": "Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/providers/overview.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Providers"}, {"@type": "ListItem", "position": 3, "name": "AI Providers — Connect to Your Preferred AI Services - Nexora"}]}]}</script>
-</head>
-<body>
-<header class="top">
-  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
-  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
-  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
-  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
-</header>
-<div class="layout">
-  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link active" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link" href="../assistants/overview.html">Overview</a><a class="nav-link" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
-  <main class="main">
-    <div class="eyebrow">Providers</div>
-    <h1 class="page-title">AI Providers — Connect to Your Preferred AI Services</h1>
-    <p class="page-desc">Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.</p>
-    <article class="prose"><p>Nexora lets you connect to multiple AI services at the same time, so you can pick the right model for every conversation without leaving the app. Each connection you configure is called a <strong>provider</strong> — it stores the API key, base URL, and any additional options needed to talk to a specific AI service. You can add as many providers as you like, enable or disable them individually, and switch between their models directly from the chat screen.</p>
-<h2 id="supported-provider-types">Supported provider types</h2>
-<p>Nexora ships with first-class support for three provider types and a flexible custom option that works with any OpenAI-compatible endpoint.</p>
-<div class="cards cols-2"><a class="card link" href="../providers/openai.html"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3l6 9-6 9-6-9z"/></svg></div><div class="card-t">OpenAI</div><div class="card-b"><p>Connect to OpenAI's API — including GPT-4o, o-series reasoning models, and the Responses API — or any service that mirrors the Chat Completions endpoint.</p></div><span class="card-go"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<a class="card link" href="../providers/google.html"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M20 12h-8"/></svg></div><div class="card-t">Google Gemini</div><div class="card-b"><p>Access Gemini models directly through the Google AI API, or use Vertex AI with a service account for enterprise deployments.</p></div><span class="card-go"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<a class="card link" href="../providers/claude.html"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></svg></div><div class="card-t">Anthropic Claude</div><div class="card-b"><p>Chat with Claude models via the Anthropic API, with optional prompt caching to reduce latency and cost on long conversations.</p></div><span class="card-go"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<a class="card link" href="../providers/custom.html"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6m6-6v6M6 8h12v4a6 6 0 01-12 0zM12 18v4"/></svg></div><div class="card-t">Custom / OpenAI-compatible</div><div class="card-b"><p>Point Nexora at OpenRouter, a local Ollama instance, a self-hosted proxy, or any other service that speaks the OpenAI Chat Completions protocol.</p></div><span class="card-go"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
-<h2 id="add-your-first-provider">Add your first provider</h2>
-<div class="steps"><div class="step"><div class="step-t">Open Settings</div><div class="step-b"><p>Tap the <strong>Settings</strong> icon in the bottom navigation bar to open the settings screen.</p></div></div>
-<div class="step"><div class="step-t">Go to Providers</div><div class="step-b"><p>Select <strong>Providers</strong> from the settings list to see all configured providers.</p></div></div>
-<div class="step"><div class="step-t">Add a provider</div><div class="step-b"><p>Tap <strong>Add Provider</strong>, choose a provider type, fill in your API key and any other required fields, then save.</p></div></div>
-<div class="step"><div class="step-t">Add models</div><div class="step-b"><p>Inside the provider detail screen, add the model IDs you want to use. Each model appears in the model picker when you start or switch a conversation.</p></div></div></div>
-<h2 id="manage-multiple-providers">Manage multiple providers</h2>
-<p>You can configure as many providers as you need. Use the toggle on each provider card to enable or disable it without deleting your settings. Disabled providers and their models are hidden from the model picker.</p>
-<div class="callout tip"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg></div><div class="co-b"><p>If you want to compare responses from different providers, add each one separately and switch models between conversations — no re-entering credentials required.</p></div></div>
-<h2 id="share-provider-configs-with-qr-codes">Share provider configs with QR codes</h2>
-<p>Every provider detail screen has a <strong>Share</strong> button that encodes your provider configuration (API key, base URL, and settings — without any added models) into a QR code. Another Nexora user can scan that QR code to import the same provider setup instantly. You can also copy the encoded string and send it over any messaging app.</p>
-<div class="callout warning"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg></div><div class="co-b"><p>The QR code and share string contain your API key. Only share them with people you trust, and revoke the key from your provider's dashboard if it is ever exposed.</p></div></div>
-<h2 id="balance-checking">Balance checking</h2>
-<p>Providers that support a balance or credits endpoint can show your remaining credit in the provider detail screen. Enable <strong>Balance Checking</strong> in the provider settings and supply the API path and the JSON field path that holds the balance value. See the individual provider pages for provider-specific examples.</p>
-<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>Some providers block requests from certain countries or regions. If you see an access-denied or 403 error, try another provider.</p></div></div></article>
-    <div class="pn-row"><a class="pn prev" href="../quickstart.html"><span>Previous</span>Quickstart</a><a class="pn next" href="../providers/openai.html"><span>Next</span>OpenAI</a></div>
-    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
-  </main>
-  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#supported-provider-types">Supported provider types</a><a class="toc-2" href="#add-your-first-provider">Add your first provider</a><a class="toc-2" href="#manage-multiple-providers">Manage multiple providers</a><a class="toc-2" href="#share-provider-configs-with-qr-codes">Share provider configs with QR codes</a><a class="toc-2" href="#balance-checking">Balance checking</a></aside>
-</div>
-<script>window.BASE="../";</script>
-<script src="../assets/search-index.js"></script>
-<script src="../assets/app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Providers — Connect to Your Preferred AI Services - Nexora</title>
+    <meta name="description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="../assets/style.css">
+    <!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="author" content="Mohamed Hamra | محمد حمرة">
+    <meta name="copyright" content="Mohamed Hamra">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
+    <link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
+    <link rel="alternate" hreflang="ar" href="https://mhamad-code.github.io/Nexora-docs/ar/providers/overview.html">
+    <link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
+    <link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+    <link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nexora Docs">
+    <meta property="og:title" content="AI Providers — Connect to Your Preferred AI Services - Nexora">
+    <meta property="og:description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
+    <meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/providers/overview.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AI Providers — Connect to Your Preferred AI Services - Nexora">
+    <meta name="twitter:description" content="Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "headline": "AI Providers — Connect to Your Preferred AI Services - Nexora",
+            "description": "Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.",
+            "inLanguage": "en",
+            "url": "https://mhamad-code.github.io/Nexora-docs/providers/overview.html",
+            "dateModified": "2026-10-20",
+            "author": {
+              "@type": "Person",
+              "name": "Mohamed Hamra",
+              "alternateName": "محمد حمرة",
+              "url": "https://github.com/mhamad-code"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Nexora",
+              "url": "https://mhamad-code.github.io/Nexora-docs/"
+            },
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Nexora Docs",
+              "url": "https://mhamad-code.github.io/Nexora-docs/",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Nexora",
+                "item": "https://mhamad-code.github.io/Nexora-docs/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Providers"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Providers — Connect to Your Preferred AI Services - Nexora"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="top">
+      <button class="menu-btn" aria-label="Menu" id="menuBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+      <div class="search">
+        <input id="q" type="search" placeholder="Search docs..." autocomplete="off">
+        <div id="results" class="results"></div>
+      </div>
+      <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg>
+      </a>
+      <a class="lang-btn" href="../ar/providers/overview.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg>
+      </button>
+    </header>
+    <div class="layout">
+      <nav class="side" id="side">
+        <div class="nav-group">
+          <div class="nav-title">Get Started</div>
+          <a class="nav-link" href="../introduction.html">Introduction</a>
+          <a class="nav-link" href="../download.html">Download</a>
+          <a class="nav-link" href="../quickstart.html">Quickstart</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Providers</div>
+          <a class="nav-link active" href="../providers/overview.html">Overview</a>
+          <a class="nav-link" href="../providers/openai.html">OpenAI</a>
+          <a class="nav-link" href="../providers/google.html">Google</a>
+          <a class="nav-link" href="../providers/claude.html">Claude</a>
+          <a class="nav-link" href="../providers/custom.html">Custom</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Chat</div>
+          <a class="nav-link" href="../chat/conversations.html">Conversations</a>
+          <a class="nav-link" href="../chat/multimodal.html">Multimodal</a>
+          <a class="nav-link" href="../chat/branching.html">Branching</a>
+          <a class="nav-link" href="../chat/search.html">Web Search</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Assistants</div>
+          <a class="nav-link" href="../assistants/overview.html">Overview</a>
+          <a class="nav-link" href="../assistants/memory.html">Memory</a>
+          <a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Extensions</div>
+          <a class="nav-link" href="../extensions/mcp.html">MCP</a>
+          <a class="nav-link" href="../extensions/skills.html">Skills</a>
+          <a class="nav-link" href="../extensions/workspace.html">Workspace</a>
+          <a class="nav-link" href="../extensions/speech.html">Speech</a>
+          <a class="nav-link" href="../extensions/image-generation.html">Image Generation</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Settings &amp; Sync</div>
+          <a class="nav-link" href="../settings/appearance.html">Appearance</a>
+          <a class="nav-link" href="../settings/web-access.html">Web Access</a>
+          <a class="nav-link" href="../settings/backup.html">Backup</a>
+        </div>
+      </nav>
+      <main class="main">
+        <div class="eyebrow">Providers</div>
+        <h1 class="page-title">AI Providers — Connect to Your Preferred AI Services</h1>
+        <p class="page-desc">Learn how to add, configure, and switch between multiple AI providers in Nexora, including OpenAI, Google Gemini, Anthropic Claude, and custom endpoints.</p>
+        <article class="prose">
+          <p>Nexora lets you connect to multiple AI services at the same time, so you can pick the right model for every conversation without leaving the app. Each connection you configure is called a <strong>provider</strong> — it stores the API key, base URL, and any additional options needed to talk to a specific AI service. You can add as many providers as you like, enable or disable them individually, and switch between their models directly from the chat screen.</p>
+          <h2 id="supported-provider-types">Supported provider types</h2>
+          <p>Nexora ships with first-class support for three provider types and a flexible custom option that works with any OpenAI-compatible endpoint.</p>
+          <div class="cards cols-2">
+            <a class="card link" href="../providers/openai.html">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3l6 9-6 9-6-9z"/></svg>
+              </div>
+              <div class="card-t">OpenAI</div>
+              <div class="card-b">
+                <p>Connect to OpenAI's API — including GPT-4o, o-series reasoning models, and the Responses API — or any service that mirrors the Chat Completions endpoint.</p>
+              </div>
+              <span class="card-go">
+                <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+            <a class="card link" href="../providers/google.html">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M20 12h-8"/></svg>
+              </div>
+              <div class="card-t">Google Gemini</div>
+              <div class="card-b">
+                <p>Access Gemini models directly through the Google AI API, or use Vertex AI with a service account for enterprise deployments.</p>
+              </div>
+              <span class="card-go">
+                <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+            <a class="card link" href="../providers/claude.html">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/></svg>
+              </div>
+              <div class="card-t">Anthropic Claude</div>
+              <div class="card-b">
+                <p>Chat with Claude models via the Anthropic API, with optional prompt caching to reduce latency and cost on long conversations.</p>
+              </div>
+              <span class="card-go">
+                <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+            <a class="card link" href="../providers/custom.html">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6m6-6v6M6 8h12v4a6 6 0 01-12 0zM12 18v4"/></svg>
+              </div>
+              <div class="card-t">Custom / OpenAI-compatible</div>
+              <div class="card-b">
+                <p>Point Nexora at OpenRouter, a local Ollama instance, a self-hosted proxy, or any other service that speaks the OpenAI Chat Completions protocol.</p>
+              </div>
+              <span class="card-go">
+                <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </a>
+          </div>
+          <h2 id="add-your-first-provider">Add your first provider</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-t">Open Settings</div>
+              <div class="step-b">
+                <p>Tap the <strong>Settings</strong> icon in the bottom navigation bar to open the settings screen.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Go to Providers</div>
+              <div class="step-b">
+                <p>Select <strong>Providers</strong> from the settings list to see all configured providers.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Add a provider</div>
+              <div class="step-b">
+                <p>Tap <strong>Add Provider</strong>, choose a provider type, fill in your API key and any other required fields, then save.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Add models</div>
+              <div class="step-b">
+                <p>Inside the provider detail screen, add the model IDs you want to use. Each model appears in the model picker when you start or switch a conversation.</p>
+              </div>
+            </div>
+          </div>
+          <h2 id="manage-multiple-providers">Manage multiple providers</h2>
+          <p>You can configure as many providers as you need. Use the toggle on each provider card to enable or disable it without deleting your settings. Disabled providers and their models are hidden from the model picker.</p>
+          <div class="callout tip">
+            <div class="co-ic">
+              <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg>
+            </div>
+            <div class="co-b">
+              <p>If you want to compare responses from different providers, add each one separately and switch models between conversations — no re-entering credentials required.</p>
+            </div>
+          </div>
+          <h2 id="share-provider-configs-with-qr-codes">Share provider configs with QR codes</h2>
+          <p>Every provider detail screen has a <strong>Share</strong> button that encodes your provider configuration (API key, base URL, and settings — without any added models) into a QR code. Another Nexora user can scan that QR code to import the same provider setup instantly. You can also copy the encoded string and send it over any messaging app.</p>
+          <div class="callout warning">
+            <div class="co-ic">
+              <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 18h.01"/></svg>
+            </div>
+            <div class="co-b">
+              <p>The QR code and share string contain your API key. Only share them with people you trust, and revoke the key from your provider's dashboard if it is ever exposed.</p>
+            </div>
+          </div>
+          <h2 id="balance-checking">Balance checking</h2>
+          <p>Providers that support a balance or credits endpoint can show your remaining credit in the provider detail screen. Enable <strong>Balance Checking</strong> in the provider settings and supply the API path and the JSON field path that holds the balance value. See the individual provider pages for provider-specific examples.</p>
+          <div class="callout note">
+            <div class="co-ic">
+              <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            </div>
+            <div class="co-b">
+              <p>Some providers block requests from certain countries or regions. If you see an access-denied or 403 error, try another provider.</p>
+            </div>
+          </div>
+        </article>
+        <div class="pn-row"><a class="pn prev" href="../quickstart.html"><span>Previous</span>Quickstart</a><a class="pn next" href="../providers/openai.html"><span>Next</span>OpenAI</a></div>
+        <footer class="foot">Mohamed Hamra &middot; <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">GitHub</a></footer>
+      </main>
+      <aside class="toc">
+        <div class="toc-h">On this page</div>
+        <a class="toc-2" href="#supported-provider-types">Supported provider types</a>
+        <a class="toc-2" href="#add-your-first-provider">Add your first provider</a>
+        <a class="toc-2" href="#manage-multiple-providers">Manage multiple providers</a>
+        <a class="toc-2" href="#share-provider-configs-with-qr-codes">Share provider configs with QR codes</a>
+        <a class="toc-2" href="#balance-checking">Balance checking</a>
+      </aside>
+    </div>
+    <script>
+      window.BASE="../";
+    </script>
+    <script src="../assets/search-index.js"></script>
+    <script src="../assets/app.js"></script>
+  </body>
 </html>

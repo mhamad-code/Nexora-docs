@@ -1,32 +1,152 @@
-(function(){
-var d=document,root=d.documentElement;
-d.getElementById('themeBtn').onclick=function(){
-  var cur=root.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
-  var n=cur==='dark'?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}
-};
-var side=d.getElementById('side');
-d.getElementById('menuBtn').onclick=function(){side.classList.toggle('open')};
-d.addEventListener('click',function(e){if(side.classList.contains('open')&&!side.contains(e.target)&&!e.target.closest('#menuBtn'))side.classList.remove('open')});
-d.querySelectorAll('.tabs').forEach(function(t){
-  var btns=t.querySelectorAll(':scope>.tab-bar>.tab-btn'),ps=t.querySelectorAll(':scope>.tab-panel');
-  btns.forEach(function(b,i){b.onclick=function(){btns.forEach(function(x,j){x.classList.toggle('on',i===j);ps[j].classList.toggle('on',i===j)})}});
-});
-var q=d.getElementById('q'),res=d.getElementById('results'),idx=window.SEARCH_INDEX||[];
-function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-q.addEventListener('input',function(){
-  var v=q.value.trim().toLowerCase();if(!v){res.classList.remove('on');return}
-  var words=v.split(/\s+/),out=[];
-  idx.forEach(function(p){
-    var hay=(p.t+' '+p.d+' '+p.x).toLowerCase(),s=0;
-    for(var i=0;i<words.length;i++){if(hay.indexOf(words[i])<0){s=-1;break}
-      s+=(p.t.toLowerCase().indexOf(words[i])>=0?10:0)+(p.d.toLowerCase().indexOf(words[i])>=0?3:1)}
-    if(s>0)out.push([s,p]);
+/**
+ * Nexora Docs — UI behaviour
+ * Theme toggle, mobile sidebar, tabs and client-side search.
+ *
+ * Developed by محمد حمرة (Mohamed Hamra) — https://github.com/mhamad-code
+ */
+(function () {
+  'use strict';
+
+  var doc = document;
+  var root = doc.documentElement;
+
+  /* ------------------------------------------------------------------
+   * Theme toggle
+   * ------------------------------------------------------------------ */
+  doc.getElementById('themeBtn').onclick = function () {
+    var prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    var current = root.dataset.theme || (prefersDark ? 'dark' : 'light');
+    var next = current === 'dark' ? 'light' : 'dark';
+
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch (e) {
+      /* storage unavailable — theme simply won't persist */
+    }
+  };
+
+  /* ------------------------------------------------------------------
+   * Mobile sidebar
+   * ------------------------------------------------------------------ */
+  var side = doc.getElementById('side');
+
+  doc.getElementById('menuBtn').onclick = function () {
+    side.classList.toggle('open');
+  };
+
+  // Close when tapping outside the sidebar.
+  doc.addEventListener('click', function (e) {
+    var isOpen = side.classList.contains('open');
+    var insideSide = side.contains(e.target);
+    var onMenuBtn = e.target.closest('#menuBtn');
+
+    if (isOpen && !insideSide && !onMenuBtn) {
+      side.classList.remove('open');
+    }
   });
-  out.sort(function(a,b){return b[0]-a[0]});
-  res.innerHTML=out.length?out.slice(0,8).map(function(r){var p=r[1];
-    return '<a href="'+window.BASE+p.u+'"><b>'+esc(p.t)+'</b><small>'+esc(p.g)+' · '+esc(p.d.slice(0,90))+'</small></a>'}).join(''):'<a><b>'+(window.NO_RES||'No results')+'</b></a>';
-  res.classList.add('on');
-});
-d.addEventListener('click',function(e){if(!e.target.closest('.search'))res.classList.remove('on')});
-d.addEventListener('keydown',function(e){if(e.key==='/'&&d.activeElement!==q){e.preventDefault();q.focus()}});
+
+  /* ------------------------------------------------------------------
+   * Tabs
+   * ------------------------------------------------------------------ */
+  doc.querySelectorAll('.tabs').forEach(function (tabs) {
+    var buttons = tabs.querySelectorAll(':scope > .tab-bar > .tab-btn');
+    var panels = tabs.querySelectorAll(':scope > .tab-panel');
+
+    buttons.forEach(function (button, index) {
+      button.onclick = function () {
+        buttons.forEach(function (b, j) {
+          b.classList.toggle('on', index === j);
+          panels[j].classList.toggle('on', index === j);
+        });
+      };
+    });
+  });
+
+  /* ------------------------------------------------------------------
+   * Search
+   *   window.SEARCH_INDEX — array of { t: title, g: group, u: url, d: description, x: text }
+   *   window.BASE         — URL prefix for result links
+   *   window.NO_RES       — localised "no results" label
+   * ------------------------------------------------------------------ */
+  var input = doc.getElementById('q');
+  var results = doc.getElementById('results');
+  var index = window.SEARCH_INDEX || [];
+
+  function escapeHtml(str) {
+    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+    return str.replace(/[&<>"]/g, function (c) {
+      return map[c];
+    });
+  }
+
+  // Returns a relevance score, or -1 when any word is missing from the page.
+  function score(page, words) {
+    var haystack = (page.t + ' ' + page.d + ' ' + page.x).toLowerCase();
+    var title = page.t.toLowerCase();
+    var description = page.d.toLowerCase();
+    var total = 0;
+
+    for (var i = 0; i < words.length; i++) {
+      if (haystack.indexOf(words[i]) < 0) {
+        return -1;
+      }
+      total += title.indexOf(words[i]) >= 0 ? 10 : 0;
+      total += description.indexOf(words[i]) >= 0 ? 3 : 1;
+    }
+    return total;
+  }
+
+  function renderResult(page) {
+    return (
+      '<a href="' + window.BASE + page.u + '">' +
+        '<b>' + escapeHtml(page.t) + '</b>' +
+        '<small>' + escapeHtml(page.g) + ' · ' + escapeHtml(page.d.slice(0, 90)) + '</small>' +
+      '</a>'
+    );
+  }
+
+  input.addEventListener('input', function () {
+    var value = input.value.trim().toLowerCase();
+
+    if (!value) {
+      results.classList.remove('on');
+      return;
+    }
+
+    var words = value.split(/\s+/);
+    var matches = [];
+
+    index.forEach(function (page) {
+      var s = score(page, words);
+      if (s > 0) {
+        matches.push([s, page]);
+      }
+    });
+
+    matches.sort(function (a, b) {
+      return b[0] - a[0];
+    });
+
+    results.innerHTML = matches.length
+      ? matches.slice(0, 8).map(function (m) { return renderResult(m[1]); }).join('')
+      : '<a><b>' + (window.NO_RES || 'No results') + '</b></a>';
+
+    results.classList.add('on');
+  });
+
+  // Close results when clicking elsewhere.
+  doc.addEventListener('click', function (e) {
+    if (!e.target.closest('.search')) {
+      results.classList.remove('on');
+    }
+  });
+
+  // Press "/" to focus the search box.
+  doc.addEventListener('keydown', function (e) {
+    if (e.key === '/' && doc.activeElement !== input) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
 })();

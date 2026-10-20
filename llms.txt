@@ -32,6 +32,8 @@ Full text: https://mhamad-code.github.io/Nexora-docs/llms-full.txt
 
 ## العربية (Arabic)
 
-- [مرحبًا بك في Nexora — تطبيق دردشة بالذكاء الاصطناعي لأندرويد](https://mhamad-code.github.io/Nexora-docs/ar/introduction.html): Nexora تطبيق أندرويد أصلي يجمع OpenAI وGoogle Gemini وAnthropic Claude وأي مزوّد متوافق مع OpenAI في واجهة واحدة أنيقة.
+- [مرحبًا بك في Nexora — تطبيق دردشة بالذكاء الاصطناعي لأندرويد](https://mhamad-code.github.io/Nexora-docs/ar/): Nexora تطبيق أندرويد أصلي يجمع OpenAI وGoogle Gemini وAnthropic Claude وأي مزوّد متوافق مع OpenAI في واجهة واحدة أنيقة.
 - [تثبيت Nexora على أندرويد](https://mhamad-code.github.io/Nexora-docs/ar/download.html): نزّل ملف Nexora APK من إصدارات GitHub، واختر النسخة المناسبة لجهازك، وأكمل إعداد أول تشغيل.
 - [البدء السريع: أرسل أول رسالة للذكاء الاصطناعي في 5 دقائق](https://mhamad-code.github.io/Nexora-docs/ar/quickstart.html): ثبّت Nexora على أندرويد، واربط أول مزوّد ذكاء اصطناعي بمفتاح API الخاص بك، واختر نموذجًا، وأرسل أول رسالة في أقل من خمس دقائق.
+- [مزوّد OpenAI — GPT وسلسلة o والواجهات المتوافقة](https://mhamad-code.github.io/Nexora-docs/ar/providers/openai.html): اضبط مزوّد OpenAI في Nexora لاستخدام GPT-4o ونماذج الاستدلال من سلسلة o أو أي واجهة متوافقة مع OpenAI بتحكم كامل في مفتاح API والعنوان.
+- [مزوّدو الذكاء الاصطناعي — اتصل بخدماتك المفضلة](https://mhamad-code.github.io/Nexora-docs/ar/providers/overview.html): تعرّف على كيفية إضافة عدة مزوّدي ذكاء اصطناعي وضبطهم والتبديل بينهم في Nexora، ومنهم OpenAI وGoogle Gemini وAnthropic Claude والواجهات المخصصة.

@@ -1,135 +1,437 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Assistants: Personas, Models, and Settings - Nexora</title>
-<meta name="description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
-<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
-<link rel="stylesheet" href="../assets/style.css">
-<!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="author" content="Mohamed Hamra | محمد حمرة">
-<meta name="copyright" content="© 2026 Mohamed Hamra">
-<meta name="theme-color" content="#4f46e5">
-<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
-<link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
-<link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
-<link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
-<link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Nexora Docs">
-<meta property="og:title" content="Assistants: Personas, Models, and Settings - Nexora">
-<meta property="og:description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
-<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ar_AR">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Assistants: Personas, Models, and Settings - Nexora">
-<meta name="twitter:description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Assistants: Personas, Models, and Settings - Nexora", "description": "Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.", "inLanguage": "en", "url": "https://mhamad-code.github.io/Nexora-docs/assistants/overview.html", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Mohamed Hamra", "alternateName": "محمد حمرة", "url": "https://github.com/mhamad-code"}, "publisher": {"@type": "Organization", "name": "Nexora", "url": "https://mhamad-code.github.io/Nexora-docs/"}, "isPartOf": {"@type": "WebSite", "name": "Nexora Docs", "url": "https://mhamad-code.github.io/Nexora-docs/", "inLanguage": "en"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Nexora", "item": "https://mhamad-code.github.io/Nexora-docs/"}, {"@type": "ListItem", "position": 2, "name": "Assistants"}, {"@type": "ListItem", "position": 3, "name": "Assistants: Personas, Models, and Settings - Nexora"}]}]}</script>
-</head>
-<body>
-<header class="top">
-  <button class="menu-btn" aria-label="Menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
-  <div class="search"><input id="q" type="search" placeholder="Search docs..." autocomplete="off"><div id="results" class="results"></div></div>
-  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
-  <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a><button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg></button>
-</header>
-<div class="layout">
-  <nav class="side" id="side"><div class="nav-group"><div class="nav-title">Get Started</div><a class="nav-link" href="../introduction.html">Introduction</a><a class="nav-link" href="../download.html">Download</a><a class="nav-link" href="../quickstart.html">Quickstart</a></div><div class="nav-group"><div class="nav-title">Providers</div><a class="nav-link" href="../providers/overview.html">Overview</a><a class="nav-link" href="../providers/openai.html">OpenAI</a><a class="nav-link" href="../providers/google.html">Google</a><a class="nav-link" href="../providers/claude.html">Claude</a><a class="nav-link" href="../providers/custom.html">Custom</a></div><div class="nav-group"><div class="nav-title">Chat</div><a class="nav-link" href="../chat/conversations.html">Conversations</a><a class="nav-link" href="../chat/multimodal.html">Multimodal</a><a class="nav-link" href="../chat/branching.html">Branching</a><a class="nav-link" href="../chat/search.html">Web Search</a></div><div class="nav-group"><div class="nav-title">Assistants</div><a class="nav-link active" href="../assistants/overview.html">Overview</a><a class="nav-link" href="../assistants/memory.html">Memory</a><a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a></div><div class="nav-group"><div class="nav-title">Extensions</div><a class="nav-link" href="../extensions/mcp.html">MCP</a><a class="nav-link" href="../extensions/skills.html">Skills</a><a class="nav-link" href="../extensions/workspace.html">Workspace</a><a class="nav-link" href="../extensions/speech.html">Speech</a><a class="nav-link" href="../extensions/image-generation.html">Image Generation</a></div><div class="nav-group"><div class="nav-title">Settings &amp; Sync</div><a class="nav-link" href="../settings/appearance.html">Appearance</a><a class="nav-link" href="../settings/web-access.html">Web Access</a><a class="nav-link" href="../settings/backup.html">Backup</a></div></nav>
-  <main class="main">
-    <div class="eyebrow">Assistants</div>
-    <h1 class="page-title">Assistants: Personas, Models, and Settings</h1>
-    <p class="page-desc">Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.</p>
-    <article class="prose"><p>Assistants are saved configurations that give the AI a distinct identity and behaviour. Each assistant stores a system prompt, an optional model override, generation parameters, and a host of advanced options — so you can switch between a coding helper, a creative writing partner, and a language tutor with a single tap, without reconfiguring anything.</p>
-<h2 id="creating-an-assistant">Creating an assistant</h2>
-<div class="steps"><div class="step"><div class="step-t">Open Settings</div><div class="step-b"><p>Tap the settings icon from the main screen to open the Settings menu.</p></div></div>
-<div class="step"><div class="step-t">Navigate to Assistants</div><div class="step-b"><p>Select <strong>Assistants</strong> from the list.</p></div></div>
-<div class="step"><div class="step-t">Add a new assistant</div><div class="step-b"><p>Tap the <strong>+</strong> button in the top-right corner. Enter a name for your assistant, then tap <strong>Save</strong>.</p></div></div>
-<div class="step"><div class="step-t">Configure the assistant</div><div class="step-b"><p>Tap the newly created assistant card to open its detail pages and fill in the fields described below.</p></div></div></div>
-<h2 id="importing-a-sillytavern-character-card">Importing a SillyTavern character card</h2>
-<p>Nexora can import character cards in the standard SillyTavern format, giving you instant access to community-created personas without any manual setup.</p>
-<div class="steps"><div class="step"><div class="step-t">Open the creation sheet</div><div class="step-b"><p>Tap the <strong>+</strong> button on the Assistants screen.</p></div></div>
-<div class="step"><div class="step-t">Choose your file format</div><div class="step-b"><p>Tap <strong>Import Tavern PNG</strong> to pick a character card image, or <strong>Import Tavern JSON</strong> to pick a JSON file.</p></div></div>
-<div class="step"><div class="step-t">Confirm the import</div><div class="step-b"><p>Nexora reads the embedded metadata, builds the system prompt automatically, and saves the assistant — including the card artwork as the chat background.</p></div></div></div>
-<div class="callout note"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></div><div class="co-b"><p>Nexora supports character card spec versions <strong>v2</strong> and <strong>v3</strong>. Importing a card automatically populates the name, system prompt, description, personality, scenario, and first message.</p></div></div>
-<h2 id="basic-configuration">Basic configuration</h2>
-<div class="cards cols-2"><div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="card-t">Identity</div><div class="card-b"><p>Set the assistant's <strong>name</strong> and <strong>avatar</strong> to make it easy to recognise at a glance. Enable <strong>Use Assistant Avatar</strong> to display the assistant's avatar in place of the model icon inside the chat.</p></div></div>
-<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/></svg></div><div class="card-t">Model override</div><div class="card-b"><p>Set a <strong>Chat Model</strong> to pin this assistant to a specific provider and model. Leave it blank to use whatever model is currently selected as the global default.</p></div></div>
-<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></div><div class="card-t">System prompt</div><div class="card-b"><p>Write the core instructions that define how the assistant thinks and responds. The system prompt is sent at the beginning of every conversation. You can use <a href="/assistants/prompt-injection#placeholder-variables">placeholder variables</a> inside the system prompt.</p></div></div>
-<div class="card"><div class="card-ic"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.500" cy="8.500" r="1"/></svg></div><div class="card-t">Tags</div><div class="card-b"><p>Assign tags to organise your assistants. Use the tag filter bar on the Assistants screen to quickly find the one you need.</p></div></div></div>
-<h2 id="key-settings-reference">Key settings reference</h2>
-<h3 id="generation-settings">Generation settings</h3>
-<div class="param"><div class="p-head"><code class="p-name">temperature</code><span class="p-type">float | null</span><span class="p-def">default: <code>null</code></span></div><div class="p-body"><p>Controls response randomness. Values range from <code>0</code> (deterministic) to <code>2</code> (very creative). Leave unset to use the model's default.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">topP</code><span class="p-type">float | null</span><span class="p-def">default: <code>null</code></span></div><div class="p-body"><p>Nucleus sampling threshold. A lower value restricts the model to higher-probability tokens. Leave unset to use the model's default. Avoid setting both <code>temperature</code> and <code>topP</code> at the same time.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">maxTokens</code><span class="p-type">int | null</span><span class="p-def">default: <code>null</code></span></div><div class="p-body"><p>Maximum number of tokens the model may generate in a single response. Leave unset for no explicit cap.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">reasoningLevel</code><span class="p-type">enum</span><span class="p-def">default: <code>AUTO</code></span></div><div class="p-body"><p>Controls how much chain-of-thought reasoning the model performs before answering. <code>AUTO</code> lets the model decide.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">streamOutput</code><span class="p-type">boolean</span><span class="p-def">default: <code>true</code></span></div><div class="p-body"><p>When enabled, the assistant's response streams token-by-token as it is generated. Disable this if you prefer to receive the complete response at once.</p></div></div>
-<h3 id="context-and-history">Context and history</h3>
-<div class="param"><div class="p-head"><code class="p-name">contextMessageSize</code><span class="p-type">int</span><span class="p-def">default: <code>0</code></span></div><div class="p-body"><p>The maximum number of recent messages included as conversation history in each request. Set to <code>0</code> to include all messages. Reducing this value lowers token usage for long conversations.</p></div></div>
-<h3 id="preset-messages">Preset messages</h3>
-<div class="param"><div class="p-head"><code class="p-name">presetMessages</code><span class="p-type">list</span></div><div class="p-body"><p>A list of messages that are always prepended to the conversation before any user input. Use preset messages to inject fixed examples, persona warm-up exchanges, or boilerplate context that every conversation with this assistant should start with.</p></div></div>
-<h3 id="http-overrides">HTTP overrides</h3>
-<div class="param"><div class="p-head"><code class="p-name">customHeaders</code><span class="p-type">list</span></div><div class="p-body"><p>Additional HTTP headers to send with every request made by this assistant. Useful for routing through proxies or satisfying custom authentication requirements.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">customBodies</code><span class="p-type">list</span></div><div class="p-body"><p>Extra fields to merge into every request body. Use this to pass provider-specific parameters that Nexora does not expose directly.</p></div></div>
-<h3 id="tools-and-integrations">Tools and integrations</h3>
-<div class="param"><div class="p-head"><code class="p-name">mcpServers</code><span class="p-type">list</span></div><div class="p-body"><p>The MCP (Model Context Protocol) servers this assistant is allowed to call. Tools from servers not in this list are hidden from the model.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">localTools</code><span class="p-type">list</span><span class="p-def">default: <code>[TimeInfo]</code></span></div><div class="p-body"><p>Built-in device tools available to this assistant. <strong>TimeInfo</strong> is included by default, letting the model query the current date and time.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">enabledSkills</code><span class="p-type">set</span></div><div class="p-body"><p>The set of skill names that are active for this assistant. Skills extend what the assistant can do beyond standard chat, such as web search or image generation, depending on what your setup supports.</p></div></div>
-<h3 id="appearance">Appearance</h3>
-<div class="param"><div class="p-head"><code class="p-name">background</code><span class="p-type">string | null</span><span class="p-def">default: <code>null</code></span></div><div class="p-body"><p>URI of a custom background image shown in the chat view for this assistant. Import a SillyTavern character card to set this automatically.</p></div></div>
-<div class="param"><div class="p-head"><code class="p-name">backgroundOpacity</code><span class="p-type">float</span><span class="p-def">default: <code>1.0</code></span></div><div class="p-body"><p>Opacity of the background image, from <code>0.0</code> (invisible) to <code>1.0</code> (fully opaque).</p></div></div>
-<h2 id="switching-assistants-in-chat">Switching assistants in chat</h2>
-<p>Tap the assistant name or avatar shown in the chat toolbar to open a picker. Select any assistant to apply its persona and settings to the current or next conversation. The change takes effect immediately for new messages.</p>
-<h2 id="quick-messages">Quick Messages</h2>
-<p>Quick Messages are pre-written message templates you can attach to an assistant and fire off with a single tap during a conversation — ideal for recurring prompts like "summarise the above" or "translate to English".</p>
-<div class="steps"><div class="step"><div class="step-t">Create quick messages</div><div class="step-b"><p>Go to <strong>Settings → Quick Messages</strong> and tap <strong>+</strong> to create a template with a title and content.</p></div></div>
-<div class="step"><div class="step-t">Attach to an assistant</div><div class="step-b"><p>Open the assistant's <strong>Extensions</strong> tab, select the <strong>Quick Messages</strong> sub-tab, and toggle on the messages you want available.</p></div></div>
-<div class="step"><div class="step-t">Use in chat</div><div class="step-b"><p>Tap the quick-message icon in the chat toolbar to see your attached templates and send one instantly.</p></div></div></div>
-<h2 id="regex-transformers">Regex transformers</h2>
-<p>Regex transformers let you define find-and-replace rules that run on messages before they are displayed or sent. This is useful for sanitising output, reformatting citations, or applying cosmetic changes.</p>
-<p>Each rule has the following fields:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td>A human-readable label for the rule</td>
-</tr>
-<tr>
-<td><strong>Find pattern</strong></td>
-<td>A standard regular expression to match against</td>
-</tr>
-<tr>
-<td><strong>Replace with</strong></td>
-<td>The replacement string (supports capture group references)</td>
-</tr>
-<tr>
-<td><strong>Scope</strong></td>
-<td>Whether the rule applies to <strong>User</strong> messages, <strong>Assistant</strong> messages, or both</td>
-</tr>
-<tr>
-<td><strong>Visual only</strong></td>
-<td>When enabled, the replacement is shown in the UI but the original text is still sent to the model</td>
-</tr>
-</tbody>
-</table>
-<div class="callout tip"><div class="co-ic"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg></div><div class="co-b"><p>Enable <strong>Visual only</strong> when you want to clean up the display without changing what the model actually sees — for example, stripping markdown syntax that your renderer already handles.</p></div></div>
-<p>To manage regex rules, open the assistant's <strong>Prompt</strong> tab and scroll to the <strong>Regex</strong> section.</p></article>
-    <div class="pn-row"><a class="pn prev" href="../chat/search.html"><span>Previous</span>Web Search</a><a class="pn next" href="../assistants/memory.html"><span>Next</span>Memory</a></div>
-    <footer class="foot">Nexora documentation &middot; adapted from RikkaHub docs (MIT) &middot; &copy; 2026 Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a></footer>
-  </main>
-  <aside class="toc"><div class="toc-h">On this page</div><a class="toc-2" href="#creating-an-assistant">Creating an assistant</a><a class="toc-2" href="#importing-a-sillytavern-character-card">Importing a SillyTavern character card</a><a class="toc-2" href="#basic-configuration">Basic configuration</a><a class="toc-2" href="#key-settings-reference">Key settings reference</a><a class="toc-3" href="#generation-settings">Generation settings</a><a class="toc-3" href="#context-and-history">Context and history</a><a class="toc-3" href="#preset-messages">Preset messages</a><a class="toc-3" href="#http-overrides">HTTP overrides</a><a class="toc-3" href="#tools-and-integrations">Tools and integrations</a><a class="toc-3" href="#appearance">Appearance</a><a class="toc-2" href="#switching-assistants-in-chat">Switching assistants in chat</a><a class="toc-2" href="#quick-messages">Quick Messages</a><a class="toc-2" href="#regex-transformers">Regex transformers</a></aside>
-</div>
-<script>window.BASE="../";</script>
-<script src="../assets/search-index.js"></script>
-<script src="../assets/app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assistants: Personas, Models, and Settings - Nexora</title>
+    <meta name="description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="../assets/style.css">
+    <!-- Developed by Mohamed Hamra (محمد حمرة) — https://github.com/mhamad-code -->
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="author" content="Mohamed Hamra | محمد حمرة">
+    <meta name="copyright" content="Mohamed Hamra">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
+    <link rel="alternate" hreflang="en" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
+    <link rel="alternate" hreflang="x-default" href="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
+    <link rel="sitemap" type="application/xml" href="https://mhamad-code.github.io/Nexora-docs/sitemap.xml">
+    <link rel="alternate" type="text/plain" href="https://mhamad-code.github.io/Nexora-docs/llms.txt" title="LLM-friendly index">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Nexora Docs">
+    <meta property="og:title" content="Assistants: Personas, Models, and Settings - Nexora">
+    <meta property="og:description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
+    <meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/assistants/overview.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_AR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Assistants: Personas, Models, and Settings - Nexora">
+    <meta name="twitter:description" content="Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "headline": "Assistants: Personas, Models, and Settings - Nexora",
+            "description": "Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.",
+            "inLanguage": "en",
+            "url": "https://mhamad-code.github.io/Nexora-docs/assistants/overview.html",
+            "dateModified": "2026-10-20",
+            "author": {
+              "@type": "Person",
+              "name": "Mohamed Hamra",
+              "alternateName": "محمد حمرة",
+              "url": "https://github.com/mhamad-code"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Nexora",
+              "url": "https://mhamad-code.github.io/Nexora-docs/"
+            },
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Nexora Docs",
+              "url": "https://mhamad-code.github.io/Nexora-docs/",
+              "inLanguage": "en"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Nexora",
+                "item": "https://mhamad-code.github.io/Nexora-docs/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Assistants"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Assistants: Personas, Models, and Settings - Nexora"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="top">
+      <button class="menu-btn" aria-label="Menu" id="menuBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a class="brand" href="../index.html"><span class="logo-mark">N</span><span>Nexora</span></a>
+      <div class="search">
+        <input id="q" type="search" placeholder="Search docs..." autocomplete="off">
+        <div id="results" class="results"></div>
+      </div>
+      <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 00-1.300-3.200 4.200 4.200 0 00-.1-3.200s-1-.3-3.400 1.300a11.700 11.700 0 00-6.200 0C6.500 2.800 5.500 3.100 5.500 3.100a4.200 4.200 0 00-.1 3.200A4.600 4.600 0 004 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg>
+      </a>
+      <a class="lang-btn" href="../ar/index.html" hreflang="ar" lang="ar" title="النسخة العربية">العربية</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.800A9 9 0 1111.200 3 7 7 0 0021 12.800z"/></svg>
+      </button>
+    </header>
+    <div class="layout">
+      <nav class="side" id="side">
+        <div class="nav-group">
+          <div class="nav-title">Get Started</div>
+          <a class="nav-link" href="../introduction.html">Introduction</a>
+          <a class="nav-link" href="../download.html">Download</a>
+          <a class="nav-link" href="../quickstart.html">Quickstart</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Providers</div>
+          <a class="nav-link" href="../providers/overview.html">Overview</a>
+          <a class="nav-link" href="../providers/openai.html">OpenAI</a>
+          <a class="nav-link" href="../providers/google.html">Google</a>
+          <a class="nav-link" href="../providers/claude.html">Claude</a>
+          <a class="nav-link" href="../providers/custom.html">Custom</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Chat</div>
+          <a class="nav-link" href="../chat/conversations.html">Conversations</a>
+          <a class="nav-link" href="../chat/multimodal.html">Multimodal</a>
+          <a class="nav-link" href="../chat/branching.html">Branching</a>
+          <a class="nav-link" href="../chat/search.html">Web Search</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Assistants</div>
+          <a class="nav-link active" href="../assistants/overview.html">Overview</a>
+          <a class="nav-link" href="../assistants/memory.html">Memory</a>
+          <a class="nav-link" href="../assistants/prompt-injection.html">Prompt Injection</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Extensions</div>
+          <a class="nav-link" href="../extensions/mcp.html">MCP</a>
+          <a class="nav-link" href="../extensions/skills.html">Skills</a>
+          <a class="nav-link" href="../extensions/workspace.html">Workspace</a>
+          <a class="nav-link" href="../extensions/speech.html">Speech</a>
+          <a class="nav-link" href="../extensions/image-generation.html">Image Generation</a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-title">Settings &amp; Sync</div>
+          <a class="nav-link" href="../settings/appearance.html">Appearance</a>
+          <a class="nav-link" href="../settings/web-access.html">Web Access</a>
+          <a class="nav-link" href="../settings/backup.html">Backup</a>
+        </div>
+      </nav>
+      <main class="main">
+        <div class="eyebrow">Assistants</div>
+        <h1 class="page-title">Assistants: Personas, Models, and Settings</h1>
+        <p class="page-desc">Create and manage reusable AI personas that bundle a system prompt, model choice, and generation settings into a single switchable profile.</p>
+        <article class="prose">
+          <p>Assistants are saved configurations that give the AI a distinct identity and behaviour. Each assistant stores a system prompt, an optional model override, generation parameters, and a host of advanced options — so you can switch between a coding helper, a creative writing partner, and a language tutor with a single tap, without reconfiguring anything.</p>
+          <h2 id="creating-an-assistant">Creating an assistant</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-t">Open Settings</div>
+              <div class="step-b">
+                <p>Tap the settings icon from the main screen to open the Settings menu.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Navigate to Assistants</div>
+              <div class="step-b">
+                <p>Select <strong>Assistants</strong> from the list.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Add a new assistant</div>
+              <div class="step-b">
+                <p>Tap the <strong>+</strong> button in the top-right corner. Enter a name for your assistant, then tap <strong>Save</strong>.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Configure the assistant</div>
+              <div class="step-b">
+                <p>Tap the newly created assistant card to open its detail pages and fill in the fields described below.</p>
+              </div>
+            </div>
+          </div>
+          <h2 id="importing-a-sillytavern-character-card">Importing a SillyTavern character card</h2>
+          <p>Nexora can import character cards in the standard SillyTavern format, giving you instant access to community-created personas without any manual setup.</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-t">Open the creation sheet</div>
+              <div class="step-b">
+                <p>Tap the <strong>+</strong> button on the Assistants screen.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Choose your file format</div>
+              <div class="step-b">
+                <p>Tap <strong>Import Tavern PNG</strong> to pick a character card image, or <strong>Import Tavern JSON</strong> to pick a JSON file.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Confirm the import</div>
+              <div class="step-b">
+                <p>Nexora reads the embedded metadata, builds the system prompt automatically, and saves the assistant — including the card artwork as the chat background.</p>
+              </div>
+            </div>
+          </div>
+          <div class="callout note">
+            <div class="co-ic">
+              <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            </div>
+            <div class="co-b">
+              <p>Nexora supports character card spec versions <strong>v2</strong> and <strong>v3</strong>. Importing a card automatically populates the name, system prompt, description, personality, scenario, and first message.</p>
+            </div>
+          </div>
+          <h2 id="basic-configuration">Basic configuration</h2>
+          <div class="cards cols-2">
+            <div class="card">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+              </div>
+              <div class="card-t">Identity</div>
+              <div class="card-b">
+                <p>Set the assistant's <strong>name</strong> and <strong>avatar</strong> to make it easy to recognise at a glance. Enable <strong>Use Assistant Avatar</strong> to display the assistant's avatar in place of the model icon inside the chat.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/></svg>
+              </div>
+              <div class="card-t">Model override</div>
+              <div class="card-b">
+                <p>Set a <strong>Chat Model</strong> to pin this assistant to a specific provider and model. Leave it blank to use whatever model is currently selected as the global default.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+              </div>
+              <div class="card-t">System prompt</div>
+              <div class="card-b">
+                <p>Write the core instructions that define how the assistant thinks and responds. The system prompt is sent at the beginning of every conversation. You can use <a href="prompt-injection.html#placeholder-variables">placeholder variables</a> inside the system prompt.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-ic">
+                <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.500" cy="8.500" r="1"/></svg>
+              </div>
+              <div class="card-t">Tags</div>
+              <div class="card-b">
+                <p>Assign tags to organise your assistants. Use the tag filter bar on the Assistants screen to quickly find the one you need.</p>
+              </div>
+            </div>
+          </div>
+          <h2 id="key-settings-reference">Key settings reference</h2>
+          <h3 id="generation-settings">Generation settings</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">temperature</code><span class="p-type">float | null</span><span class="p-def">default: <code>null</code></span></div>
+            <div class="p-body">
+              <p>Controls response randomness. Values range from <code>0</code> (deterministic) to <code>2</code> (very creative). Leave unset to use the model's default.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">topP</code><span class="p-type">float | null</span><span class="p-def">default: <code>null</code></span></div>
+            <div class="p-body">
+              <p>Nucleus sampling threshold. A lower value restricts the model to higher-probability tokens. Leave unset to use the model's default. Avoid setting both <code>temperature</code> and <code>topP</code> at the same time.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">maxTokens</code><span class="p-type">int | null</span><span class="p-def">default: <code>null</code></span></div>
+            <div class="p-body">
+              <p>Maximum number of tokens the model may generate in a single response. Leave unset for no explicit cap.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">reasoningLevel</code><span class="p-type">enum</span><span class="p-def">default: <code>AUTO</code></span></div>
+            <div class="p-body">
+              <p>Controls how much chain-of-thought reasoning the model performs before answering. <code>AUTO</code> lets the model decide.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">streamOutput</code><span class="p-type">boolean</span><span class="p-def">default: <code>true</code></span></div>
+            <div class="p-body">
+              <p>When enabled, the assistant's response streams token-by-token as it is generated. Disable this if you prefer to receive the complete response at once.</p>
+            </div>
+          </div>
+          <h3 id="context-and-history">Context and history</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">contextMessageSize</code><span class="p-type">int</span><span class="p-def">default: <code>0</code></span></div>
+            <div class="p-body">
+              <p>The maximum number of recent messages included as conversation history in each request. Set to <code>0</code> to include all messages. Reducing this value lowers token usage for long conversations.</p>
+            </div>
+          </div>
+          <h3 id="preset-messages">Preset messages</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">presetMessages</code><span class="p-type">list</span></div>
+            <div class="p-body">
+              <p>A list of messages that are always prepended to the conversation before any user input. Use preset messages to inject fixed examples, persona warm-up exchanges, or boilerplate context that every conversation with this assistant should start with.</p>
+            </div>
+          </div>
+          <h3 id="http-overrides">HTTP overrides</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">customHeaders</code><span class="p-type">list</span></div>
+            <div class="p-body">
+              <p>Additional HTTP headers to send with every request made by this assistant. Useful for routing through proxies or satisfying custom authentication requirements.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">customBodies</code><span class="p-type">list</span></div>
+            <div class="p-body">
+              <p>Extra fields to merge into every request body. Use this to pass provider-specific parameters that Nexora does not expose directly.</p>
+            </div>
+          </div>
+          <h3 id="tools-and-integrations">Tools and integrations</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">mcpServers</code><span class="p-type">list</span></div>
+            <div class="p-body">
+              <p>The MCP (Model Context Protocol) servers this assistant is allowed to call. Tools from servers not in this list are hidden from the model.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">localTools</code><span class="p-type">list</span><span class="p-def">default: <code>[TimeInfo]</code></span></div>
+            <div class="p-body">
+              <p>Built-in device tools available to this assistant. <strong>TimeInfo</strong> is included by default, letting the model query the current date and time.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">enabledSkills</code><span class="p-type">set</span></div>
+            <div class="p-body">
+              <p>The set of skill names that are active for this assistant. Skills extend what the assistant can do beyond standard chat, such as web search or image generation, depending on what your setup supports.</p>
+            </div>
+          </div>
+          <h3 id="appearance">Appearance</h3>
+          <div class="param">
+            <div class="p-head"><code class="p-name">background</code><span class="p-type">string | null</span><span class="p-def">default: <code>null</code></span></div>
+            <div class="p-body">
+              <p>URI of a custom background image shown in the chat view for this assistant. Import a SillyTavern character card to set this automatically.</p>
+            </div>
+          </div>
+          <div class="param">
+            <div class="p-head"><code class="p-name">backgroundOpacity</code><span class="p-type">float</span><span class="p-def">default: <code>1.0</code></span></div>
+            <div class="p-body">
+              <p>Opacity of the background image, from <code>0.0</code> (invisible) to <code>1.0</code> (fully opaque).</p>
+            </div>
+          </div>
+          <h2 id="switching-assistants-in-chat">Switching assistants in chat</h2>
+          <p>Tap the assistant name or avatar shown in the chat toolbar to open a picker. Select any assistant to apply its persona and settings to the current or next conversation. The change takes effect immediately for new messages.</p>
+          <h2 id="quick-messages">Quick Messages</h2>
+          <p>Quick Messages are pre-written message templates you can attach to an assistant and fire off with a single tap during a conversation — ideal for recurring prompts like "summarise the above" or "translate to English".</p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-t">Create quick messages</div>
+              <div class="step-b">
+                <p>Go to <strong>Settings → Quick Messages</strong> and tap <strong>+</strong> to create a template with a title and content.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Attach to an assistant</div>
+              <div class="step-b">
+                <p>Open the assistant's <strong>Extensions</strong> tab, select the <strong>Quick Messages</strong> sub-tab, and toggle on the messages you want available.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-t">Use in chat</div>
+              <div class="step-b">
+                <p>Tap the quick-message icon in the chat toolbar to see your attached templates and send one instantly.</p>
+              </div>
+            </div>
+          </div>
+          <h2 id="regex-transformers">Regex transformers</h2>
+          <p>Regex transformers let you define find-and-replace rules that run on messages before they are displayed or sent. This is useful for sanitising output, reformatting citations, or applying cosmetic changes.</p>
+          <p>Each rule has the following fields:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Name</strong></td>
+                <td>A human-readable label for the rule</td>
+              </tr>
+              <tr>
+                <td><strong>Find pattern</strong></td>
+                <td>A standard regular expression to match against</td>
+              </tr>
+              <tr>
+                <td><strong>Replace with</strong></td>
+                <td>The replacement string (supports capture group references)</td>
+              </tr>
+              <tr>
+                <td><strong>Scope</strong></td>
+                <td>Whether the rule applies to <strong>User</strong> messages, <strong>Assistant</strong> messages, or both</td>
+              </tr>
+              <tr>
+                <td><strong>Visual only</strong></td>
+                <td>When enabled, the replacement is shown in the UI but the original text is still sent to the model</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout tip">
+            <div class="co-ic">
+              <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.500c.7.700 1 1.500 1 2.500h6c0-1 .3-1.800 1-2.500A6 6 0 0012 3z"/></svg>
+            </div>
+            <div class="co-b">
+              <p>Enable <strong>Visual only</strong> when you want to clean up the display without changing what the model actually sees — for example, stripping markdown syntax that your renderer already handles.</p>
+            </div>
+          </div>
+          <p>To manage regex rules, open the assistant's <strong>Prompt</strong> tab and scroll to the <strong>Regex</strong> section.</p>
+        </article>
+        <div class="pn-row"><a class="pn prev" href="../chat/search.html"><span>Previous</span>Web Search</a><a class="pn next" href="../assistants/memory.html"><span>Next</span>Memory</a></div>
+        <footer class="foot">Mohamed Hamra &middot; <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">GitHub</a></footer>
+      </main>
+      <aside class="toc">
+        <div class="toc-h">On this page</div>
+        <a class="toc-2" href="#creating-an-assistant">Creating an assistant</a>
+        <a class="toc-2" href="#importing-a-sillytavern-character-card">Importing a SillyTavern character card</a>
+        <a class="toc-2" href="#basic-configuration">Basic configuration</a>
+        <a class="toc-2" href="#key-settings-reference">Key settings reference</a>
+        <a class="toc-3" href="#generation-settings">Generation settings</a>
+        <a class="toc-3" href="#context-and-history">Context and history</a>
+        <a class="toc-3" href="#preset-messages">Preset messages</a>
+        <a class="toc-3" href="#http-overrides">HTTP overrides</a>
+        <a class="toc-3" href="#tools-and-integrations">Tools and integrations</a>
+        <a class="toc-3" href="#appearance">Appearance</a>
+        <a class="toc-2" href="#switching-assistants-in-chat">Switching assistants in chat</a>
+        <a class="toc-2" href="#quick-messages">Quick Messages</a>
+        <a class="toc-2" href="#regex-transformers">Regex transformers</a>
+      </aside>
+    </div>
+    <script>
+      window.BASE="../";
+    </script>
+    <script src="../assets/search-index.js"></script>
+    <script src="../assets/app.js"></script>
+  </body>
 </html>
