@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexora — Your Android AI Chat Application</title>
+<meta name="description" content="Nexora is a native Android app that unifies OpenAI, Google Gemini, Anthropic Claude, and any OpenAI-compatible provider in one beautiful interface.">
+<meta name="theme-color" content="#FFB23E">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Mohamed Hamra | محمد حمرة">
+<link rel="canonical" href="https://mhamad-code.github.io/Nexora-docs/landing.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexora">
+<meta property="og:title" content="Nexora — Your Android AI Chat Application">
+<meta property="og:description" content="Nexora is a native Android app that unifies OpenAI, Google Gemini, Anthropic Claude, and any OpenAI-compatible provider in one interface.">
+<meta property="og:url" content="https://mhamad-code.github.io/Nexora-docs/landing.html">
+<meta property="og:image" content="https://mhamad-code.github.io/Nexora-docs/assets/img/logo-512.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nexora","operatingSystem":"Android","applicationCategory":"CommunicationApplication","description":"Native Android AI chat app. Bring your own API keys for OpenAI, Google Gemini, Anthropic Claude and any OpenAI-compatible provider.","url":"https://mhamad-code.github.io/Nexora-docs/landing.html","image":"https://mhamad-code.github.io/Nexora-docs/assets/img/logo-512.png","downloadUrl":"https://github.com/mhamad-code/Nexora/releases/tag/latest","license":"https://www.gnu.org/licenses/agpl-3.0.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mohamed Hamra","url":"https://github.com/mhamad-code"}}
+</script>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.lp{max-width:1248px;margin:0 auto;padding:0 16px 32px}
+.lp section{margin-top:4rem}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3rem 2.5rem;border-radius:var(--r-lg);margin-top:1rem}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin:.6rem 0 1rem;letter-spacing:-.03em;text-shadow:0 2px 28px rgba(255,178,62,.5)}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.hero p{font-size:1.1rem;color:var(--mut);max-width:34rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.6rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-md);font-weight:700;border:1px solid var(--glass-bd);background:var(--glass-in);color:var(--fg)!important;box-shadow:var(--sh-out);text-decoration:none!important;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--sh-out),var(--glow)}
+.btn.pri{background:var(--grad);color:var(--ink)!important;border-color:transparent;box-shadow:0 8px 26px rgba(255,178,62,.45)}
+/* phones */
+.stage{position:relative;height:520px;perspective:1200px}
+.phone{position:absolute;width:240px;aspect-ratio:9/18.5;border-radius:34px;padding:9px;background:linear-gradient(160deg,#2c1d45,#1B1230);box-shadow:0 30px 60px rgba(27,18,48,.4),0 0 0 1px rgba(255,255,255,.15),inset 0 0 0 2px rgba(255,255,255,.06)}
+.screen{height:100%;border-radius:26px;overflow:hidden;background:linear-gradient(170deg,#FFF6E5,#F1E8FF 60%,#DDFBF4);color:var(--ink);display:flex;flex-direction:column;padding:26px 12px 12px;gap:8px;font-size:11px;position:relative}
+.screen:before{content:"";position:absolute;top:8px;left:50%;width:60px;height:14px;border-radius:8px;background:#1B1230;transform:translateX(-50%)}
+.p1{inset-inline-start:2%;top:40px;transform:rotateY(14deg) rotateZ(-4deg);animation:fl 7s ease-in-out infinite}
+.p2{inset-inline-end:2%;top:0;transform:rotateY(-12deg) rotateZ(4deg);animation:fl 8s ease-in-out -3s infinite}
+@keyframes fl{50%{translate:0 -14px}}
+.bar{display:flex;align-items:center;gap:6px;font-weight:700;font-size:12px}
+.bar i{width:18px;height:18px;border-radius:6px;background:var(--grad)}
+.bub{padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.8);box-shadow:0 2px 8px rgba(70,40,130,.1);line-height:1.4}
+.bub.me{align-self:flex-end;background:linear-gradient(135deg,#FFB23E,#B892FF);font-weight:600;max-width:80%}
+.bub.ai{max-width:92%}
+.inp{margin-top:auto;padding:9px 12px;border-radius:14px;background:rgba(255,255,255,.85);color:#6b5d88;box-shadow:inset 0 1px 3px rgba(70,40,130,.15)}
+.chip{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:12px;background:rgba(255,255,255,.8);font-weight:600}
+.chip i{width:20px;height:20px;border-radius:50%}
+.chip b{margin-inline-start:auto;font-size:9px;padding:2px 7px;border-radius:6px;background:rgba(94,234,212,.5)}
+.tree{display:grid;gap:6px;padding-inline-start:10px;border-inline-start:2px solid var(--violet)}
+/* sections */
+.h2{text-align:center;margin-bottom:2rem}
+.h2 h2{font-size:2rem;margin:.4rem 0}
+.h2 p{color:var(--mut);margin:0}
+.prov{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.prov span{padding:10px 20px;border-radius:var(--r-lg);font-weight:700;background:var(--glass);border:1px solid var(--glass-bd);box-shadow:var(--sh-glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.shots{display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:2rem 2rem 3rem;margin:0 -16px}
+.shot{flex:none;scroll-snap-align:center;text-align:center;width:240px}
+.shot .phone{position:relative;animation:none;transform:none;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.shot:hover .phone{transform:translateY(-10px) rotateY(-6deg)}
+.shot h3{margin:1.2rem 0 .2rem}
+.shot p{margin:0;color:var(--mut);font-size:14px;white-space:normal}
+.cta{text-align:center;padding:3rem 2rem;border-radius:var(--r-lg)}
+.cta h2{font-size:2rem;margin:0 0 .5rem}
+.cta p{color:var(--mut)}
+.cta .btns{justify-content:center}
+.lp-foot{text-align:center;color:var(--mut);font-size:13px;margin-top:2rem}
+
+/* app icon in header */
+.logo-img{width:30px;height:30px;border-radius:var(--r-md);display:block;box-shadow:0 0 18px rgba(255,178,62,.6)}
+.hero .dl-note{font-size:.9rem;margin-top:1rem}
+.hero .dl-note a{text-decoration:underline}
+/* real screenshots: put PNG/JPG files in assets/screens/ - the CSS mock shows until a file exists */
+.real{position:absolute;inset:0;z-index:2;border-radius:inherit;background-repeat:no-repeat;background-position:top center;background-size:cover;pointer-events:none}
+.r-hero1{background-image:url(assets/screens/hero-chat.png),url(assets/screens/hero-chat.jpg)}
+.r-hero2{background-image:url(assets/screens/hero-providers.png),url(assets/screens/hero-providers.jpg)}
+.r-chat{background-image:url(assets/screens/chat.png),url(assets/screens/chat.jpg)}
+.r-branching{background-image:url(assets/screens/branching.png),url(assets/screens/branching.jpg)}
+.r-assistants{background-image:url(assets/screens/assistants.png),url(assets/screens/assistants.jpg)}
+.r-search{background-image:url(assets/screens/search.png),url(assets/screens/search.jpg)}
+.r-extensions{background-image:url(assets/screens/extensions.png),url(assets/screens/extensions.jpg)}
+/* releases */
+.rel{padding:2rem;border-radius:var(--r-lg);background:var(--glass);border:1px solid var(--glass-bd);box-shadow:var(--sh-glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.rel-head{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+.rel-ver{font-size:1.6rem;font-weight:700;line-height:1.2}
+.rel-date{color:var(--mut);font-size:.95rem}
+.rel-log{margin:1rem 0 0;color:var(--mut);white-space:pre-line}
+.rel-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:1.5rem}
+.rel-item{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:var(--r-md);border:1px solid var(--glass-bd);background:var(--glass-in);box-shadow:var(--sh-out);color:var(--fg)!important;text-decoration:none!important;transition:transform .25s,box-shadow .25s}
+.rel-item:hover{transform:translateY(-3px);box-shadow:var(--sh-out),var(--glow)}
+.rel-item span{color:var(--mut);font-size:13px}
+.rel-foot{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;margin:1.5rem 0 0;font-size:.95rem}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;margin-bottom:.8rem}
+.lp-foot a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.rel{padding:1.25rem}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:2rem 1.25rem}.stage{height:480px}}
+@media(max-width:800px){.hero h1{font-size:2.2rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="landing.html"><img class="logo-img" src="assets/img/favicon-192.png" alt="" width="30" height="30"><span>Nexora</span></a>
+  <span style="flex:1"></span>
+  <a class="lang-btn" href="#releases">Releases</a>
+  <a class="lang-btn" href="index.html">Docs</a>
+  <a class="gh" href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.100-.3-3.500 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.100 5.4 3.100a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.500c0 4.6 2.7 5.7 5.5 6-.6.600-.6 1.200-.5 2V21"/></svg></a>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></button>
+</header>
+
+<main class="lp">
+  <section class="hero top-glass" style="margin-top:1rem;background:var(--glass);border:1px solid var(--glass-bd);box-shadow:var(--sh-glass);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%)">
+    <div>
+      <div class="eyebrow">Native Android · Kotlin + Jetpack Compose</div>
+      <h1>Every major AI, <em>one beautiful</em> app</h1>
+      <p>Nexora is a native Android app that unifies OpenAI, Google Gemini, Anthropic Claude, and any OpenAI-compatible provider in one beautiful interface. Bring your own API keys — no subscriptions, no middlemen, no lock-in.</p>
+      <div class="btns">
+        <a class="btn pri" id="dlMain" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-universal-release.apk" rel="noopener">Download APK</a>
+        <a class="btn" href="quickstart.html">Quickstart</a>
+      </div>
+      <p class="dl-note">Universal build for every Android device.<span id="dlVer"></span> <a href="#releases">Other builds</a> are listed below. Android may ask you to allow installs from your browser.</p>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="phone p1"><div class="screen">
+        <div class="bar"><i></i>Nexora</div>
+        <div class="bub me">Compare these two answers</div>
+        <div class="bub ai">Sure — here is a side-by-side of both models, grounded in live search results.</div>
+        <div class="bub ai">Want me to branch the chat and try another model?</div>
+        <div class="inp">Message…</div><i class="real r-hero1"></i></div></div>
+      <div class="phone p2"><div class="screen">
+        <div class="bar"><i></i>Providers</div>
+        <div class="chip"><i style="background:#5EEAD4"></i>OpenAI<b>ON</b></div>
+        <div class="chip"><i style="background:#B892FF"></i>Google Gemini<b>ON</b></div>
+        <div class="chip"><i style="background:#FFB23E"></i>Anthropic Claude<b>ON</b></div>
+        <div class="chip"><i style="background:#1B1230"></i>Custom</div><i class="real r-hero2"></i></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="h2"><div class="eyebrow" style="margin-inline:auto">Providers</div><h2>One app, every provider</h2><p>Switch between OpenAI, Gemini, Claude, and OpenAI-compatible APIs without leaving the app.</p></div>
+    <div class="prov"><span>OpenAI</span><span>Google Gemini</span><span>Anthropic Claude</span><span>OpenRouter</span><span>Ollama</span><span>Custom APIs</span></div>
+  </section>
+
+  <section>
+    <div class="h2"><div class="eyebrow" style="margin-inline:auto">Screenshots</div><h2>See Nexora in action</h2><p>Scroll to explore the interface.</p></div>
+    <div class="shots">
+      <div class="shot"><div class="phone" role="img" aria-label="Nexora chat screen"><div class="screen"><div class="bar"><i></i>Chat</div><div class="bub me">Summarize this PDF</div><div class="bub ai">Here are the key points from your document…</div><div class="bub ai">Rich Markdown, code blocks and tables render natively.</div><div class="inp">Message…</div><i class="real r-chat"></i></div></div><h3>Conversations</h3><p>Edit, regenerate, and track token usage.</p></div>
+      <div class="shot"><div class="phone" role="img" aria-label="Nexora conversation branching"><div class="screen"><div class="bar"><i></i>Branching</div><div class="bub me">Explain MCP</div><div class="tree"><div class="bub ai">Answer A · GPT</div><div class="bub ai">Answer B · Claude</div><div class="bub ai">Answer C · Gemini</div></div><div class="inp">Fork from here…</div><i class="real r-branching"></i></div></div><h3>Branching</h3><p>Fork any message to compare answers.</p></div>
+      <div class="shot"><div class="phone" role="img" aria-label="Nexora assistants list"><div class="screen"><div class="bar"><i></i>Assistants</div><div class="chip"><i style="background:#FFB23E"></i>Translator</div><div class="chip"><i style="background:#B892FF"></i>Code reviewer</div><div class="chip"><i style="background:#5EEAD4"></i>Writing coach</div><div class="chip"><i style="background:#1B1230"></i>Memory<b>ON</b></div><i class="real r-assistants"></i></div></div><h3>Assistants</h3><p>Personas, models, and system prompts.</p></div>
+      <div class="shot"><div class="phone" role="img" aria-label="Nexora web search"><div class="screen"><div class="bar"><i></i>Web Search</div><div class="chip">Live results</div><div class="bub ai">Real-time web access keeps answers accurate and up to date.</div><div class="bub ai">Sources are injected right into the chat.</div><div class="inp">Search…</div><i class="real r-search"></i></div></div><h3>Web Search</h3><p>Ground answers in live results.</p></div>
+      <div class="shot"><div class="phone" role="img" aria-label="Nexora extensions"><div class="screen"><div class="bar"><i></i>Extensions</div><div class="chip"><i style="background:#5EEAD4"></i>MCP<b>ON</b></div><div class="chip"><i style="background:#B892FF"></i>Skills</div><div class="chip"><i style="background:#FFB23E"></i>Speech</div><div class="chip"><i style="background:#1B1230"></i>Image Generation</div><i class="real r-extensions"></i></div></div><h3>Extensions</h3><p>MCP tools, skills, speech and images.</p></div>
+    </div>
+  </section>
+
+  <section id="releases">
+    <div class="h2"><div class="eyebrow" style="margin-inline:auto">Releases</div><h2>Latest release</h2><p>Direct downloads from GitHub Releases.</p></div>
+    <div class="rel">
+      <div class="rel-head">
+        <div><div class="rel-ver" id="relVer">Latest build</div><div class="rel-date" id="relDate"></div></div>
+        <a class="btn pri" id="relMain" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-universal-release.apk" rel="noopener">Download Universal APK</a>
+      </div>
+      <p class="rel-log" id="relLog" dir="auto">Every build is made by GitHub Actions from the public source code.</p>
+      <div class="rel-list" id="relList">
+        <a class="rel-item" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-arm64-v8a-release.apk" rel="noopener"><b>arm64-v8a</b><span>Most modern phones</span></a>
+        <a class="rel-item" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-armeabi-v7a-release.apk" rel="noopener"><b>armeabi-v7a</b><span>Older 32-bit phones</span></a>
+        <a class="rel-item" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-universal-release.apk" rel="noopener"><b>Universal</b><span>Works on every device</span></a>
+        <a class="rel-item" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-x86_64-release.apk" rel="noopener"><b>x86_64</b><span>Emulators and x86 devices</span></a>
+      </div>
+      <p class="rel-foot"><a href="https://github.com/mhamad-code/Nexora/releases/tag/latest" target="_blank" rel="noopener">View on GitHub</a><a href="download.html">Install guide</a><a href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener">Source code</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h2"><div class="eyebrow" style="margin-inline:auto">Why Nexora?</div><h2>You own your AI experience</h2></div>
+    <div class="cards cols-3">
+      <a class="card link" href="providers/overview.html"><div class="card-t">Multiple Providers, One App</div><div class="card-b"><p>Switch between OpenAI, Gemini, Claude, and OpenAI-compatible APIs without leaving the app.</p></div></a>
+      <a class="card link" href="assistants/overview.html"><div class="card-t">Custom Assistants</div><div class="card-b"><p>Build reusable assistants with custom system prompts, model selections, and personalities.</p></div></a>
+      <a class="card link" href="extensions/mcp.html"><div class="card-t">MCP Tool Support</div><div class="card-b"><p>Connect external tools and data sources through the Model Context Protocol.</p></div></a>
+      <a class="card link" href="chat/search.html"><div class="card-t">Live Web Search</div><div class="card-b"><p>Enable real-time web access so your AI answers stay accurate and up to date.</p></div></a>
+      <a class="card link" href="chat/branching.html"><div class="card-t">Conversation Branching</div><div class="card-b"><p>Fork any conversation at a specific message to explore different answers.</p></div></a>
+      <a class="card link" href="settings/web-access.html"><div class="card-t">Web Access</div><div class="card-b"><p>Open Nexora's chat interface from a browser on your local network.</p></div></a>
+    </div>
+  </section>
+
+  <section class="cta" style="background:var(--glass);border:1px solid var(--glass-bd);box-shadow:var(--sh-glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)">
+    <h2>Get set up in minutes</h2>
+    <p>Install Nexora from GitHub Releases and send your first message in under five minutes.</p>
+    <div class="btns"><a class="btn pri" id="dlCta" href="https://github.com/mhamad-code/Nexora/releases/download/latest/app-universal-release.apk" rel="noopener">Download APK</a><a class="btn" href="download.html">Install guide</a><a class="btn" href="introduction.html">Read the docs</a></div>
+  </section>
+  <footer class="lp-foot">
+    <nav class="foot-links" aria-label="Links">
+      <a href="index.html">Docs</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="ar/privacy.html" lang="ar" hreflang="ar">سياسة الخصوصية</a>
+      <a href="https://github.com/mhamad-code/Nexora/releases/tag/latest" target="_blank" rel="noopener">Releases</a>
+      <a href="https://github.com/mhamad-code/Nexora" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <p>Developed by <a href="https://github.com/mhamad-code" rel="author noopener" target="_blank">Mohamed Hamra</a>. Nexora is based on <a href="https://github.com/rikkahub/rikkahub" target="_blank" rel="noopener">RikkaHub</a> and licensed under AGPL-3.0.</p>
+  </footer>
+</main>
+<script>
+document.getElementById('themeBtn').onclick=function(){var d=matchMedia('(prefers-color-scheme: dark)').matches,r=document.documentElement,c=r.dataset.theme||(d?'dark':'light'),n=c==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+</script>
+<script>
+(function(){
+  var BASE='https://github.com/mhamad-code/Nexora/releases/download/';
+  var SRC='https://raw.githubusercontent.com/mhamad-code/Nexora/main/update.json';
+  function $(id){return document.getElementById(id)}
+  function safe(u){return typeof u==='string'&&u.indexOf(BASE)===0}
+  function label(n){
+    if(/universal/i.test(n))return['Universal','Works on every device'];
+    if(/arm64/i.test(n))return['arm64-v8a','Most modern phones'];
+    if(/armeabi/i.test(n))return['armeabi-v7a','Older 32-bit phones'];
+    if(/x86_64/i.test(n))return['x86_64','Emulators and x86 devices'];
+    return[n,'APK'];
+  }
+  fetch(SRC,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    if(!d||!d.version||!Array.isArray(d.downloads))return;
+    var dl=d.downloads.filter(function(x){return x&&safe(x.url)&&/\.apk$/i.test(x.name||x.url)});
+    if(!dl.length)return;
+    $('relVer').textContent='Version '+d.version;
+    $('dlVer').textContent=' Version '+d.version+'.';
+    if(d.publishedAt){var t=new Date(d.publishedAt);if(!isNaN(t))$('relDate').textContent='Published '+t.toLocaleDateString('en',{year:'numeric',month:'long',day:'numeric'})}
+    if(d.changelog)$('relLog').textContent=d.changelog;
+    var uni=dl.filter(function(x){return /universal/i.test(x.name||x.url)})[0]||dl[0];
+    ['dlMain','relMain','dlCta'].forEach(function(id){var a=$(id);if(a)a.href=uni.url});
+    var list=$('relList');list.textContent='';
+    dl.forEach(function(x){
+      var l=label(x.name||x.url),a=document.createElement('a'),b=document.createElement('b'),sp=document.createElement('span');
+      a.className='rel-item';a.href=x.url;a.rel='noopener';
+      b.textContent=l[0];sp.textContent=l[1]+(x.size?' ('+x.size+')':'');
+      a.appendChild(b);a.appendChild(sp);list.appendChild(a);
+    });
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
